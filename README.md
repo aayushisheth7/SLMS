@@ -1,6 +1,6 @@
 # SLMS
 SLMS is a website which automate whole college fuctions and helps students and teacher to work better.
-<br>
+##
 in src file all resources are added like js,php,img,css.
 # make sure to always create a pull requests and dont push code in master branch
 1. first fork this branch and make colne in your local repo
