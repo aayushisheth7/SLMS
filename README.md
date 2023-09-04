@@ -2,6 +2,12 @@
 SLMS is a website which automate whole college fuctions and helps students and teacher to work better.
 ##
 in src file all resources are added like js,php,img,css.
+##
+#Pathss
+1. src/css - for css
+2. src/js - for js
+3. src/img/icon - for icons
+4. src/img/pic - for photos
 # make sure to always create a pull requests and dont push code in master branch
 1. first fork this branch and make colne in your local repo
 2. add remote branch which you created in local repo
