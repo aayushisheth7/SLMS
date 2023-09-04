@@ -3,7 +3,7 @@ SLMS is a website which automate whole college fuctions and helps students and t
 ##
 in src file all resources are added like js,php,img,css.
 ##
-#Pathss
+# Pathss
 1. src/css - for css
 2. src/js - for js
 3. src/img/icon - for icons
