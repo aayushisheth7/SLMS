@@ -13,7 +13,7 @@ const Login = () => {
     React.createElement("div", { className: "login-page" }, /*#__PURE__*/
     React.createElement("div", { className: "login-box" }, /*#__PURE__*/
     React.createElement("div", { className: "illustration-wrapper" }, /*#__PURE__*/
-    React.createElement("img", { src: "https://mixkit.imgix.net/art/preview/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.png?q=80&auto=format%2Ccompress&h=700", alt: "Login" })), /*#__PURE__*/
+    React.createElement("img", { src: "/src/img/pic/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.avif", alt: "Login" })), /*#__PURE__*/
 
     React.createElement(antd.Form, {
       name: "login-form",method:"POST",action:"login.php",
@@ -44,9 +44,12 @@ const Login = () => {
     React.createElement(antd.Form.Item, { name: "remember", valuePropName: "checked" }, /*#__PURE__*/
     React.createElement(antd.Checkbox, null, "Remember me")), /*#__PURE__*/
 
-
+    
+    
     React.createElement(antd.Form.Item, null, /*#__PURE__*/
-    React.createElement(antd.Button, { type: "primary", htmlType: "submit", className: "login-form-button" }, "LOGIN"))))));
+    React.createElement(antd.Button, { type: "primary", htmlType: "submit", className: "login-form-button" }, "LOGIN")),
+    React.createElement("a",{href: "#", className:"create"},"Create account"),
+    ))));
 
 
 
