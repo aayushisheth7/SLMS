@@ -12,6 +12,7 @@ body{
     max-width: 300px;
     width: 300px;
     min-width: 200px;
+    z-index: 999;
     /* position: relative; */
 }
 .sidebar>img{
@@ -124,29 +125,28 @@ ul>i>li>pre>a{
     width: 30px;
     padding: 3px;
     flex: 1;
-    /* position: static; */
     height: 25px;
     margin-left: 10%;
 }
 .notipro{
     flex: 1;
-    display: grid;
-    margin-left: 50px;
+    position: relative;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
     height: fit-content;
 }
 .notification{
-    margin-left: 150px;
+    float: right;
 }
 .notification>img{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 .profile>img{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 .profile{
+   float: right;
    margin-left: 30px;
+   margin-right: 10px;
 }
