@@ -2,6 +2,7 @@
 body{
     margin: 0;
 }
+/* sidebar start here */
 .sidebar{
     background-color: #9C50CA;
     height: 100%;
@@ -84,4 +85,62 @@ ul>i>li>pre>a{
 }
 .active>li>pre{
     padding-top: 8px;
+}
+/* sidebar ends here */
+
+/* searchbar start */
+.srch{
+    position: absolute;
+    inset: 0;
+    height: fit-content;
+    left: 381px;
+    margin-top: 10px;
+    display:flex;
+}
+.srch>form>input{
+    height: 33px;
+    width: 770px;
+    /* position: static; */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.srchicon{
+    background-color: #9C50CA;
+    width: 50px;
+    display: flex;
+    height: 33px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.srchicon>div>img{
+    width: 30px;
+    padding: 3px;
+    flex: 1;
+    /* position: static; */
+    height: 25px;
+    margin-left: 10%;
+}
+.notipro{
+    flex: 1;
+    display: grid;
+    margin-left: 50px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+}
+.notification{
+    margin-left: 150px;
+}
+.notification>img{
+    width: 30px;
+    height: 30px;
+}
+.profile>img{
+    width: 30px;
+    height: 30px;
+}
+.profile{
+   margin-left: 30px;
 }
