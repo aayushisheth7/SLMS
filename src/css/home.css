@@ -49,7 +49,7 @@ ul>i>img {
 ul>i>li {
     text-decoration: none;
     list-style: none;
-    font-family: 'josefin sans';
+    font-family: 'josefin sans','open sans';
     margin-left: 10px;
     font-size: 30px;
     font-style: normal;
@@ -62,7 +62,7 @@ ul>i>li {
 ul>i>li>pre {
     text-decoration: none;
     list-style: none;
-    font-family: 'josefin sans';
+    font-family: 'josefin sans',open sans;
     margin-left: 10px;
     font-size: 30px;
     font-style: normal;
@@ -119,33 +119,33 @@ ul>i>li>pre>a {
     margin-top: 10px;
     display: flex;
 }
-
-.srch>form>input {
+.srch>form{
+    display: flex;
+}
+.srchbar {
     height: 33px;
     width: 770px;
     min-width: 100px;
-    /* position: static; */
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .srchicon {
+    background-image: url('/src/img/icons/search.svg');
     background-color: #9C50CA;
-    width: 50px;
-    display: flex;
+    background-size: 30px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -99999px;
+    padding: 10px;
     height: 33px;
+    width: 37px;
+    border: none;
+    cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.srchicon>div>img {
-    width: 30px;
-    padding: 3px;
-    flex: 1;
-    height: 25px;
-    margin-left: 10%;
 }
 
 .notipro {
