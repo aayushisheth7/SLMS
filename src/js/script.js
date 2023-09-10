@@ -48,7 +48,7 @@ const Login = () => {
     
     React.createElement(antd.Form.Item, null, /*#__PURE__*/
     React.createElement(antd.Button, { type: "primary", htmlType: "submit", className: "login-form-button" }, "LOGIN")),
-    React.createElement("a",{href: "#", className:"create"},"Create account"),
+    React.createElement("a",{href: "/signup.html", className:"create"},"Create account"),
     ))));
 
 
