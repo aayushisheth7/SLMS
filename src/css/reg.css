@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9edff;
+}
+.box>form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.box>form>div>input{
+    width: 200px;
+    margin-bottom: 15px;
+}
+.box>form>div>select{
+    margin-bottom: 15px;
+}
+.box{
+    position: relative;
+    box-shadow: 5px 5px 8px gray;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#sub{
+  position: relative;
+  left: 50%;
+  margin-top: 20px;
+  transform: translate(-50%);
+}
+
+h1{
+    text-align: center;
+    color: #5161ce;
+}

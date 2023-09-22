@@ -16,7 +16,7 @@ const Login = () => {
     React.createElement("img", { src: "/src/img/pic/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.avif", alt: "Login" })), /*#__PURE__*/
 
     React.createElement(antd.Form, {
-      name: "login-form",method:"POST",action:"login.php",
+      name: "login-form",method:"POST",action:"/src/php/login.php",
       initialValues: { remember: true },
       onFinish: onFinish,
       onFinishFailed: onFinishFailed }, /*#__PURE__*/
