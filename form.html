@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration form</title>
     <link rel="stylesheet" href="src/css/reg.css">
 </head>
+
 <body>
     <div class="box">
         <h1>Student Ragistration</h1>
-            <form action="src/php/reg.php" method="POST">
-                <div>
+        <h6>Please fill in the from below</h6>
+        <form action="src/php/reg.php" method="POST">
+            <div>
                 <label for="enrollment">Enrollment</label>
-                <input type="text" name="enrollment">
+                <input type="text" placeholder="12xxxxxxxx" name="enrollment">
             </div>
             <div>
                 <label for="fname">First Name</label>
@@ -22,63 +25,74 @@
                 <label for="mname">Middle name</label>
                 <input type="text" name="mname">
             </div>
-<div>
+            <div>
                 <label for="lname">Last Name</label>
                 <input type="text" name="lname">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="aadharcard">Aadharcard</label>
-                <input type="number" name="aadharcard">
-                </div>
-<div>
+                <input type="number" placeholder="XXXX-XXXX-XXX" name="aadharcard">
+            </div>
+            <div>
                 <label for="course">Course</label>
                 <select name="course" id="course">
-                    <option value=""></option>
+                    <option value="">Please Select</option>
                     <option value="B.E">B.E</option>
 
                 </select>
-                </div>
-<div>
-                <label for="mobileno">Mobile Number</label>
-                <input type="number" name="mobileno">
-                </div>
+            </div>
+            <div id="gnd">
+                <label for="gender">Gender</label>
                 <div>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female">
+            </div>
+            </div>
+            <div>
+                <label for="mobileno">Mobile Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="mobileno">
+            </div>
+            <div>
                 <label for="parentname">Parent Name</label>
                 <input type="text" name="parentname">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="parentno">Parent Number</label>
-                <input type="number" name="parentno">
-                </div>
-<div>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="parentno">
+            </div>
+            <div>
                 <label for="emergencycontectname">Emergency Contect Name</label>
                 <input type="text" name="emergencycontectname">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="emergencycontectnumber">Emergency Contect Number</label>
-                <input type="number" name="emergencycontectnumber">
-                </div>
-<div>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
+            </div>
+            <div>
                 <label for="emergencycontectrelation">Emergency Contect Relation</label>
                 <input type="text" name="emergencycontectrelation">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="age">Age</label>
                 <input type="number" name="age">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="dob">Date Of Birth</label>
                 <input type="date" name="dob">
-                </div>
-<div>
+            </div>
+            <div>
                 <label for="address">Address</label>
-                <textarea name="address" id="add" cols="30" rows="10"></textarea>
-                </div>
-                
-                <input type="submit" id="sub" name="submit" value="Register">
-                
+                <textarea name="address" placeholder="Enter your permenent address" id="add" cols="25"
+                    rows="5"></textarea>
+            </div>
 
-               </form>
+            <input type="submit" id="sub" name="submit" value="Register">
+
+
+        </form>
     </div>
 </body>
+
 </html>

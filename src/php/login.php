@@ -1,5 +1,6 @@
 <?php 
 include('dbconnect.php');
+if(isset($_POST['username']) && isset($_POST['password'])){
 $username=$_POST['username'];
 $password=$_POST['password'];
 $ins="SELECT * FROM `login` WHERE username like ('$username') and pass like ('$password')";
@@ -21,7 +22,10 @@ else{
         alert("Wrong username ans password");
     </script>
     <?php
-    // header('Location: ../../index.html');
+    }
+}
+else{
+    header('Location: ../../index.html');
 }
 ?>
 

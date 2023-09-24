@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap');
+
 body{
     margin: 0;
     display: flex;
+    font-family: 'josefin sans','open sans';
     justify-content: center;
     align-items: center;
     background-color: #d9edff;
@@ -13,9 +16,25 @@ body{
 .box>form>div>input{
     width: 200px;
     margin-bottom: 15px;
+    float: right;
+    border-radius: 50px;
 }
+.box>form>div{
+    position: relative;
+}
+
 .box>form>div>select{
     margin-bottom: 15px;
+    float: right;
+    width: 100px;
+    border: 2px solid black;
+    margin-right: 107px;
+    border-radius: 50px;
+}
+.box>form>div>textarea{
+    float: right;
+    border-radius: 5px;
+    border: 2px solid black;
 }
 .box{
     position: relative;
@@ -32,6 +51,13 @@ body{
 #sub{
   position: relative;
   left: 50%;
+  width: 125px;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: white;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid gray;
   margin-top: 20px;
   transform: translate(-50%);
 }
@@ -39,4 +65,34 @@ body{
 h1{
     text-align: center;
     color: #5161ce;
+    margin-bottom: 0;
+}
+h6{
+    margin-top: 0;
+    text-align: center;
+}
+.box>form>div>label{
+    margin-right: 12px;
+}
+#gnd{
+    position: relative;
+    margin-bottom: 15px;
+}
+#gnd>div{
+    float: right;
+    margin-right: 57px;
+}
+@media(max-width:425px) {
+    .box>form>div>input{
+        width: 100px;
+    }
+    .box>form>div>select{
+        margin-right: 5px;
+    }
+    #gnd>div{
+        margin-right: 5px;
+    }
+    ::placeholder{
+        font-size: 10px;
+    }
 }
