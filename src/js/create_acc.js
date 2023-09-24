@@ -8,7 +8,7 @@ const Login = () => {
 
         // Set the form attributes
         form.method = 'POST';
-        form.action = '/src/php/login.php';
+        form.action = '/src/php/create_acc.php';
       
         // Create form data and append the necessary fields
         const formData = new FormData();
@@ -42,14 +42,14 @@ const Login = () => {
           React.createElement("img", { src: "/src/img/pic/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.avif", alt: "Login" })), /*#__PURE__*/
 
         React.createElement(antd.Form, {
-          name: "login-form", method: "GET", action: "/src/php/login.php",
+          name: "login-form", method: "GET", action: "/src/php/create_acc.php",
           initialValues: { remember: true },
           onFinish: onFinish,
           onFinishFailed: onFinishFailed
         }, /*#__PURE__*/
 
-          React.createElement("p", { className: "form-title" }, "Welcome back"), /*#__PURE__*/
-          React.createElement("p", null, "Login to the Dashboard"), /*#__PURE__*/
+          React.createElement("p", { className: "form-title" }, "Signup Here"), /*#__PURE__*/
+          React.createElement("p", null, "create account"), /*#__PURE__*/
           React.createElement(antd.Form.Item, {
             name: "username",
             rules: [{ required: true, message: 'Please input your username!' }]
@@ -71,15 +71,9 @@ const Login = () => {
             })), /*#__PURE__*/
 
 
-
-          React.createElement(antd.Form.Item, { name: "remember", valuePropName: "checked" }, /*#__PURE__*/
-            React.createElement(antd.Checkbox, null, "Remember me")), /*#__PURE__*/
-
-
-
           React.createElement(antd.Form.Item,null, /*#__PURE__*/
-            React.createElement(antd.Button, { type: "primary" ,name: "submit", htmlType: "submit", className: "login-form-button" }, "LOGIN")),
-          React.createElement("a", { href: "/create_acc.html", className: "create" }, "Create account"),
+            React.createElement(antd.Button, { type: "primary" ,name: "submit", htmlType: "submit", className: "login-form-button" }, "SIGNUP")),
+          React.createElement("a", { href: "/index.html", className: "create" }, "LogIn"),
         ))));
 
 
