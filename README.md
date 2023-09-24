@@ -17,4 +17,3 @@ in src file all resources are added like js,php,img,css.
 6. if your local repo is behind some commit then
 7. first push you code in local repo make it synck
 8. and pull it.......
-   - Nishiket Bhatt
