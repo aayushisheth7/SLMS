@@ -3,8 +3,8 @@ include('dbconnect.php');
 if(isset($_POST['username']) && isset($_POST['password'])){
 $username=$_POST['username'];
 $password=$_POST['password'];
-$ins="SELECT * FROM `login` WHERE username like ('$username') and pass like ('$password')";
-$query = mysqli_query($conn, $ins) or die(mysqli_error($conn));
+$sel="SELECT * FROM `login` WHERE username like ('$username') and pass like ('$password')";
+$query = mysqli_query($conn, $sel) or die(mysqli_error($conn));
 $count=mysqli_num_rows($query);
 if($count >=1){
     ?>
