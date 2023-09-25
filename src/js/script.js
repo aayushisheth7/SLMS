@@ -27,7 +27,7 @@ const Login = () => {
         // Append the form to the document body
         document.body.appendChild(form);
       
-        form.submit();
+       form.submit();
       }
 
 
