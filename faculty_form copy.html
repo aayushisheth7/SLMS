@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="faculty_reg.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Faculty Registration</h1>
+        <h6>Please fill in the form below</h6>
+        <form action="src/php/reg.php" method="POST">
+            <div>
+                <label for="college code">Enter College Code</label>
+                <input type="text" name="college code">
+            </div>
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname">
+            </div>
+            <div>
+                <label for="mname">Middle name</label>
+                <input type="text" name="mname">
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname">
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <div id="gnd">
+                <label for="gender">Gender</label>
+                <div>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female">
+            </div>
+            </div>
+            <div>
+                <label for="mobileno">Mobile Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="mobileno">
+            </div>
+            <div>
+                <label for="qualification">Qualification</label>
+                <input type="text" name="qualification">
+            </div>
+            <div>
+                <label for="position">Current Position</label>
+                <input type="text" name="position">
+            </div>
+            <div>
+                <label for="experience">Teaching Experience</label>
+                <input type="text" name="experience">
+            </div>
+            <div>
+                <label for="expertise">Area of Expertise</label>
+                <input type="text" name="expertise">
+            </div>
+            <div>
+                <label for="emergencycontectname">Emergency Contact Name</label>
+                <input type="text" name="emergencycontectname">
+            </div>
+            <div>
+                <label for="emergencycontectnumber">Emergency Contact Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
+            </div>
+            <div>
+                <label for="emergencycontectrelation">Emergency Contact Relation</label>
+                <input type="text" name="emergencycontectrelation">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age">
+            </div>
+            <div>
+                <label for="dob">Date Of Birth</label>
+                <input type="date" name="dob">
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <textarea name="address" placeholder="Enter your permanent address" id="add" cols="25"
+                    rows="5"></textarea>
+            </div>
+            <div>
+                <label for="profileImage">Profile Image:</label>
+                <input type="file" id="profileImage" name="profileImage" accept="image/*">
+            </div>
+
+            <input type="submit" id="sub" name="submit" value="Register" title="Register">
+
+
+        </form>
+    </div>
+</body>
+
+</html>
