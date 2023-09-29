@@ -10,8 +10,8 @@
 
 <body>
     <div class="box">
-        <h1>Student Ragistration</h1>
-        <h6>Please fill in the from below</h6>
+        <h1>Student Registration</h1>
+        <h6>Please fill in the form below</h6>
         <form action="src/php/reg.php" method="POST">
             <div>
                 <label for="enrollment">Enrollment</label>
@@ -55,6 +55,10 @@
                 <input type="number" placeholder="+91 XXXXXXXXXX" name="mobileno">
             </div>
             <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
                 <label for="parentname">Parent Name</label>
                 <input type="text" name="parentname">
             </div>
@@ -63,15 +67,15 @@
                 <input type="number" placeholder="+91 XXXXXXXXXX" name="parentno">
             </div>
             <div>
-                <label for="emergencycontectname">Emergency Contect Name</label>
+                <label for="emergencycontectname">Emergency Contact Name</label>
                 <input type="text" name="emergencycontectname">
             </div>
             <div>
-                <label for="emergencycontectnumber">Emergency Contect Number</label>
+                <label for="emergencycontectnumber">Emergency Contact Number</label>
                 <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
             </div>
             <div>
-                <label for="emergencycontectrelation">Emergency Contect Relation</label>
+                <label for="emergencycontectrelation">Emergency Contact Relation</label>
                 <input type="text" name="emergencycontectrelation">
             </div>
             <div>
@@ -88,7 +92,7 @@
                     rows="5"></textarea>
             </div>
 
-            <input type="submit" id="sub" name="submit" value="Register">
+            <input type="submit" id="sub" name="submit" value="Register" title="Register">
 
 
         </form>

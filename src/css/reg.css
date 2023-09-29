@@ -61,11 +61,15 @@ body{
   margin-top: 20px;
   transform: translate(-50%);
 }
+#sub:hover{
+    background-color: #3c9af1;
+    cursor: pointer;
+}
 
 h1{
     text-align: center;
     color: #5161ce;
-    margin-bottom: 0;
+    margin-bottom: 3px;
 }
 h6{
     margin-top: 0;
