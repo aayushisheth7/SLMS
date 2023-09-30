@@ -11,6 +11,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         header('Location: ../../create_acc.html');
     }
 }
+ mysqli_close($conn);
 
 
 ?>

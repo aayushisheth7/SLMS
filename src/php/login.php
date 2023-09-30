@@ -15,6 +15,7 @@ if($count >=1){
     session_start();
     $_SESSION['username']=$username;
     header("Location: ../../student_home.html");
+    mysqli_close($conn);
 }
 else{
     ?>
@@ -26,6 +27,7 @@ else{
 }
 else{
     header('Location: ../../index.html');
+    mysqli_close($conn);
 }
 ?>
 
