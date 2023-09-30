@@ -1,3 +1,3 @@
 <?php
-header('Location: ../../form.html');
+header('Location: ../../student_form.html');
 ?>
