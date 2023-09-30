@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="src/css/admin_form.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Admin Registration</h1>
+        <h6>Please fill in the form below</h6>
+        <form action="src/php/reg.php" method="POST">
+            <div>
+                <label for="college code">Enter College Code</label>
+                <input type="text" name="college code">
+            </div>
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname">
+            </div>
+            <div>
+                <label for="mname">Middle name</label>
+                <input type="text" name="mname">
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname">
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <div id="gnd">
+                <label for="gender">Gender</label>
+                <div>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female">
+            </div>
+            </div>
+            <div>
+                <label for="mobileno">Mobile Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="mobileno">
+            </div>
+            <div>
+                
+
+        <label for="languages">Preferred Languages</label>
+        <select id="languages" name="languages[]">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="gujarati">Gujarati</option>
+            <!-- Add more language options as needed -->
+        </select></div>
+        <div id="notify">
+            <label for="notification">Notification Preference</label>
+            <div>
+            <label for="emailid">Email</label>
+            <input type="radio" name="notification" value="emailid" id="emailid">
+            <label for="sms">SMS</label>
+            <input type="radio" name="notification" value="sms" id="sms">
+        </div>
+        </div>
+
+            <div>
+                <label for="position">Role or Position</label>
+                <input type="text" name="position">
+            </div>
+            <div id="permissions">
+                <label for="permissions">Permissions</label>
+                <div class="checkbox">
+        <label for="management">User Management</label>
+        <input type="checkbox" id="management" name="permissions[]" value="management"><br>
+
+        <label for="access">Access Control</label>
+        <input type="checkbox" id="access" name="permissions[]" value="access"><br>
+
+        <label for="content">Content Management</label>
+        <input type="checkbox" id="content" name="permissions[]" value="content"><br>
+
+        <label for="security">Security</label>
+        <input type="checkbox" id="security" name="permissions[]" value="security"><br>
+
+        <label for="config">System Management</label>
+        <input type="checkbox" id="config" name="permissions[]" value="config"><br>
+
+        <label for="message">Notification and Messaging</label>
+        <input type="checkbox" id="message" name="permissions[]" value="message"><br>
+
+        <label for="integration">API or integration</label>
+        <input type="checkbox" id="integration" name="permissions[]" value="integration">
+
+        
+
+            </div>
+            </div>
+            
+            <div>
+                <label for="emergencycontectname">Emergency Contact Name</label>
+                <input type="text" name="emergencycontectname">
+            </div>
+            <div>
+                <label for="emergencycontectnumber">Emergency Contact Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
+            </div>
+            <div>
+                <label for="emergencycontectrelation">Emergency Contact Relation</label>
+                <input type="text" name="emergencycontectrelation">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age">
+            </div>
+            <div>
+                <label for="dob">Date Of Birth</label>
+                <input type="date" name="dob">
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <textarea name="address" placeholder="Enter your permanent address" id="add" cols="24"
+                    rows="5"></textarea>
+            </div>
+            <div>
+                <label for="profileImage">Profile Image:</label>
+                <input type="file" id="profileImage" name="profileImage" accept="image/*">
+            </div>
+
+            <input type="submit" id="sub" name="submit" value="Register" title="Register">
+
+
+        </form>
+    </div>
+</body>
+
+</html>
