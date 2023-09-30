@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="src/css/reg.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Student Registration</h1>
+        <h6>Please fill in the form below</h6>
+        <form action="src/php/reg.php" method="POST">
+            <div>
+                <label for="enrollment">Enrollment</label>
+                <input type="text" placeholder="12xxxxxxxx" name="enrollment">
+            </div>
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname">
+            </div>
+            <div>
+                <label for="mname">Middle name</label>
+                <input type="text" name="mname">
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname">
+            </div>
+            <div>
+                <label for="aadharcard">Aadharcard</label>
+                <input type="number" placeholder="XXXX-XXXX-XXXX" name="aadharcard">
+            </div>
+            <div>
+                <label for="course">Course</label>
+                <select name="course" id="course">
+                    <option value="">Please Select</option>
+                    <option value="B.E">B.E</option>
+
+                </select>
+            </div>
+            <div id="gnd">
+                <label for="gender">Gender</label>
+                <div>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female">
+            </div>
+            </div>
+            <div>
+                <label for="mobileno">Mobile Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="mobileno">
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="parentname">Parent Name</label>
+                <input type="text" name="parentname">
+            </div>
+            <div>
+                <label for="parentno">Parent Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="parentno">
+            </div>
+            <div>
+                <label for="emergencycontectname">Emergency Contact Name</label>
+                <input type="text" name="emergencycontectname">
+            </div>
+            <div>
+                <label for="emergencycontectnumber">Emergency Contact Number</label>
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
+            </div>
+            <div>
+                <label for="emergencycontectrelation">Emergency Contact Relation</label>
+                <input type="text" name="emergencycontectrelation">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age">
+            </div>
+            <div>
+                <label for="dob">Date Of Birth</label>
+                <input type="date" name="dob">
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <textarea name="address" placeholder="Enter your permenent address" id="add" cols="25"
+                    rows="5"></textarea>
+            </div>
+
+            <input type="submit" id="sub" name="submit" value="Register" title="Register">
+
+
+        </form>
+    </div>
+</body>
+
+</html>
