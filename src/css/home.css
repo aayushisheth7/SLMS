@@ -203,6 +203,9 @@ ul>i>li>pre>a {
         display: none;
         visibility: hidden;
     }
+    ul>i>a>img:hover{
+        
+    }
     .active{
         padding-bottom: 5px;
         width: 31px;
@@ -233,17 +236,32 @@ ul>i>li>pre>a {
 }
 @media (max-width:390px){
     .sidebar{
-        /* visibility: hidden; */
-
+        max-width: 46px;
+    }
+    .sidebar>img{
+        -webkit-appearance: none;
+        visibility: hidden;
+        display: none;
+    }
+    ul>i>li{
+        display: none;
+        visibility: hidden;
+    }
+    ul>i>a>img:hover{
+        
+    }
+    .active{
+        padding-bottom: 5px;
+        width: 31px;
     }
     .logout{
-        padding-top: 10px;
+        padding-top: 15px;
     }
     .srch{
         left: 100px;
     }
     .srchbar{
-        width: 90px;
+        width: 50px;
         height: 23px;
     }
     .srchicon{
