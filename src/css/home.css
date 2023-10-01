@@ -14,13 +14,13 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
+    width: 250px;
     z-index: 999;
 }
 
 .sidebar>img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     min-width: 100px;
     min-height: 100px;
     margin-left: 20%;
@@ -40,7 +40,7 @@ ul>i {
     margin-left: 10px;
 }
 
-ul>i>img {
+ul>i>a>img {
     height: 25px;
     width: 25px;
     max-width: 43px;
@@ -93,7 +93,7 @@ ul>i>li>pre>a {
     background-color: white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    width: 270px;
+    width: 220px;
     margin-left: 0;
     padding-top: 10px;
     padding-left: 10px;
@@ -175,6 +175,11 @@ ul>i>li>pre>a {
     margin-left: 30px;
     margin-right: 10px;
 }
+.hidden{
+    /* -webkit-appearance: none;
+    display: none;
+    visibility: hidden; */
+}
 @media (max-width:768px) {
     .srchbar{
         width: 100px;
@@ -187,7 +192,23 @@ ul>i>li>pre>a {
 }
 @media (max-width:425px){
     .sidebar{
+        max-width: 46px;
+    }
+    .sidebar>img{
+        -webkit-appearance: none;
+        visibility: hidden;
         display: none;
+    }
+    ul>i>li{
+        display: none;
+        visibility: hidden;
+    }
+    .active{
+        padding-bottom: 5px;
+        width: 31px;
+    }
+    .logout{
+        padding-top: 15px;
     }
     .srch{
         left: 100px;
@@ -212,13 +233,17 @@ ul>i>li>pre>a {
 }
 @media (max-width:390px){
     .sidebar{
-        display: none;
+        /* visibility: hidden; */
+
+    }
+    .logout{
+        padding-top: 10px;
     }
     .srch{
         left: 100px;
     }
     .srchbar{
-        width: 50px;
+        width: 90px;
         height: 23px;
     }
     .srchicon{
