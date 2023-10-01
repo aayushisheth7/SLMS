@@ -116,7 +116,6 @@ h6{
     
 }
 
-
 .checkbox input[type="checkbox"] {
     display: inline-block;
     width: 20%; /* Adjust the width as needed */
@@ -128,9 +127,6 @@ h6{
     display: inline-block;
     width: 70%; /* Adjust the width as needed */
 }
-
-
-
 
 @media(max-width:425px) {
     .box>form>div>input{
