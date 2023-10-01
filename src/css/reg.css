@@ -8,6 +8,9 @@ body{
     align-items: center;
     background-color: #d9edff;
 }
+.box{
+    margin: 15px;
+}
 .box>form{
     display: flex;
     flex-direction: column;
@@ -35,6 +38,7 @@ body{
     float: right;
     border-radius: 5px;
     border: 2px solid black;
+    margin-bottom: 7px;
 }
 .box{
     position: relative;
@@ -86,6 +90,10 @@ h6{
     float: right;
     margin-right: 57px;
 }
+#profileImage{
+    border-radius: 0;
+}
+
 @media(max-width:425px) {
     .box>form>div>input{
         width: 100px;
@@ -98,5 +106,8 @@ h6{
     }
     ::placeholder{
         font-size: 10px;
+    }
+    body{
+        font-size: small;
     }
 }
