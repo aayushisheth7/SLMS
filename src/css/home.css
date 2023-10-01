@@ -85,6 +85,63 @@ ul>i>li>pre>a {
     color: white;
 }
 
+ul>i>li>span{
+    position: absolute;
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #9C50CA;
+    transition: 0.2s;
+    transform: translateX(100px);
+    left: 80px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    visibility: hidden;
+    font-size: large;
+    opacity: 0;
+    z-index: 1;
+}
+ul>i>li>span:before{
+    position: relative;
+    border: 8px solid #fff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+ul>i>li>pre>span{
+    position: absolute;
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    text-transform: capitalize;
+    color: #9C50CA;
+    transition: 0.2s;
+    transform: translateX(100px);
+    left: 80px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    visibility: hidden;
+    font-size: large;
+    opacity: 0;
+    z-index: 1;
+}
+ul>i>li>pre>span:before{
+    position: relative;
+    border: 8px solid #fff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
 .logout {
     margin-top: 15px;
 }
@@ -129,7 +186,7 @@ ul>i>li>pre>a {
     width: 770px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
 }
 
 .srchicon {
@@ -146,7 +203,7 @@ ul>i>li>pre>a {
     cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.25);
 }
 
 .notipro {
@@ -204,12 +261,23 @@ ul>i>li>pre>a {
         visibility: hidden;
         display: none;
     }
-    ul>i>li{
+    ul>i>li>a{
         display: none;
         visibility: hidden;
     }
-    ul>i>a>img:hover{
-        background-color: red;
+    ul>i:hover li>span{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-12px);
+    }
+    ul>i>li>pre>a{
+        display: none;
+        visibility: hidden;
+    }
+    ul>i:hover li>pre>span{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-12px);
     }
     .active{
         padding-bottom: 5px;
@@ -248,12 +316,23 @@ ul>i>li>pre>a {
         visibility: hidden;
         display: none;
     }
-    ul>i>li{
+    ul>i>li>a{
         display: none;
         visibility: hidden;
     }
-    ul>i>a>img:hover{
-        background-color: red;
+    ul>i>li>pre>a{
+        display: none;
+        visibility: hidden;
+    }
+    ul>i:hover li>pre>span{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-12px);
+    }
+    ul>i:hover li>span{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-12px);
     }
     .active{
         padding-bottom: 5px;
@@ -266,7 +345,7 @@ ul>i>li>pre>a {
         left: 100px;
     }
     .srchbar{
-        width: 50px;
+        width: 90px;
         height: 23px;
     }
     .srchicon{
