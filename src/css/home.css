@@ -50,7 +50,7 @@ ul>i>a>img {
 ul>i>li {
     text-decoration: none;
     list-style: none;
-    font-family: 'josefin sans','open sans';
+    font-family: 'josefin sans', 'open sans';
     margin-left: 10px;
     font-size: 30px;
     font-style: normal;
@@ -63,7 +63,7 @@ ul>i>li {
 ul>i>li>pre {
     text-decoration: none;
     list-style: none;
-    font-family: 'josefin sans',open sans;
+    font-family: 'josefin sans', open sans;
     margin-left: 10px;
     font-size: 30px;
     font-style: normal;
@@ -85,7 +85,7 @@ ul>i>li>pre>a {
     color: white;
 }
 
-ul>i>li>span{
+ul>i>li>span {
     position: absolute;
     display: block;
     background: #fff;
@@ -103,7 +103,8 @@ ul>i>li>span{
     opacity: 0;
     z-index: 1;
 }
-ul>i>li>span:before{
+
+ul>i>li>span:before {
     position: relative;
     border: 8px solid #fff;
     border-top-color: transparent;
@@ -114,7 +115,8 @@ ul>i>li>span:before{
     transform: translateY(-50%);
 
 }
-ul>i>li>pre>span{
+
+ul>i>li>pre>span {
     position: absolute;
     display: block;
     background: #fff;
@@ -131,7 +133,8 @@ ul>i>li>pre>span{
     opacity: 0;
     z-index: 1;
 }
-ul>i>li>pre>span:before{
+
+ul>i>li>pre>span:before {
     position: relative;
     border: 8px solid #fff;
     border-top-color: transparent;
@@ -142,6 +145,7 @@ ul>i>li>pre>span:before{
     transform: translateY(-50%);
 
 }
+
 .logout {
     margin-top: 15px;
 }
@@ -178,9 +182,11 @@ ul>i>li>pre>span:before{
     margin-top: 10px;
     display: flex;
 }
-.srch>form{
+
+.srch>form {
     display: flex;
 }
+
 .srchbar {
     height: 33px;
     width: 770px;
@@ -232,131 +238,167 @@ ul>i>li>pre>span:before{
     margin-left: 30px;
     margin-right: 10px;
 }
-.hidden{
+
+.hidden {
     /* -webkit-appearance: none;
     display: none;
     visibility: hidden; */
 }
+
 @media (max-width:769px) {
-    .srchbar{
+    .srchbar {
         width: 100px;
     }
 }
+
 @media (max-width:1024px) {
-    .srchbar{
+    .srchbar {
         width: 350px;
     }
 }
+
 @media (max-width:820px) {
-    .srchbar{
+    .srchbar {
         width: 150px;
     }
 }
-@media (max-width:426px){
-    .sidebar{
+
+@media (max-width:426px) {
+    .sidebar {
         max-width: 46px;
     }
-    .sidebar>img{
+
+    .sidebar>img {
         -webkit-appearance: none;
         visibility: hidden;
         display: none;
     }
-    ul>i>li>a{
+
+    ul>i>li>a {
         display: none;
         visibility: hidden;
     }
-    ul>i:hover li>span{
+
+    ul>i:hover li>span {
         visibility: visible;
         opacity: 1;
         transform: translateX(-12px);
     }
-    ul>i>li>pre>a{
+
+    ul>i>li>pre>a {
         display: none;
         visibility: hidden;
     }
-    ul>i:hover li>pre>span{
+
+    ul>i>li>pre {
+        height: 0px;
+    }
+
+    ul>i:hover li>pre>span {
         visibility: visible;
         opacity: 1;
         transform: translateX(-12px);
     }
-    .active{
+
+    .active {
         padding-bottom: 5px;
         width: 31px;
     }
-    .logout{
+
+    .logout {
         padding-top: 15px;
     }
-    .srch{
+
+    .srch {
         left: 100px;
     }
-    .srchbar{
+
+    .srchbar {
         width: 110px;
         height: 23px;
     }
-    .srchicon{
+
+    .srchicon {
         height: 23px;
         background-size: 21px 21px;
     }
+
     .notification>img {
         width: 25px;
         height: 25px;
     }
-    
+
     .profile>img {
         width: 25px;
         height: 25px;
     }
 }
-@media (max-width:391px){
-    .sidebar{
+
+@media (max-width:391px) {
+    .sidebar {
         max-width: 46px;
     }
-    .sidebar>img{
+
+    .sidebar>img {
         -webkit-appearance: none;
         visibility: hidden;
         display: none;
     }
-    ul>i>li>a{
+
+    ul>i>li>a {
         display: none;
         visibility: hidden;
     }
-    ul>i>li>pre>a{
+
+    ul>i>li>pre>a {
         display: none;
         visibility: hidden;
     }
-    ul>i:hover li>pre>span{
+
+    ul>i>li>pre {
+        height: 0px;
+    }
+
+    ul>i:hover li>pre>span {
         visibility: visible;
         opacity: 1;
         transform: translateX(-12px);
     }
-    ul>i:hover li>span{
+    
+    ul>i:hover li>span {
         visibility: visible;
         opacity: 1;
         transform: translateX(-12px);
     }
-    .active{
+
+    .active {
         padding-bottom: 5px;
         width: 31px;
     }
-    .logout{
+
+    .logout {
         padding-top: 15px;
     }
-    .srch{
+
+    .srch {
         left: 100px;
     }
-    .srchbar{
+
+    .srchbar {
         width: 90px;
         height: 23px;
     }
-    .srchicon{
+
+    .srchicon {
         height: 23px;
         background-size: 21px 21px;
     }
+
     .notification>img {
         width: 25px;
         height: 25px;
     }
-    
+
     .profile>img {
         width: 25px;
         height: 25px;
