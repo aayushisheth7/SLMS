@@ -9,7 +9,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if(mysqli_query($conn,$ins)){
         header('Location: ../../signup.html');
     }else{
-        $re=true;
+        echo"<script> alert('Username is taken') </script>";
         header('Location: ../../create_acc.html');
     }
 }
