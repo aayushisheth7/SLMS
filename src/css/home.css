@@ -174,7 +174,7 @@ ul>i>li>pre>span:before {
 
 /* searchbar start */
 .srch {
-    position: fixed;
+    position: absolute;
     inset: 0;
     top: 0;
     right: 0;

@@ -2,13 +2,17 @@
  --book:255px;
  border: 1px solid #ddd;
  border-radius: 10px;
- box-shadow: #000 5px 5px 12px;
+ box-shadow: gray 5px 5px 12px;
  padding: 20px;
  font-family: 'josefin sans', 'open sans';
  margin-bottom: 20px;
- margin-top: 55px;
  margin-right: 15px;
  margin-left: calc(var(--book));
+}
+.content{
+    overflow: auto; /* Enable scrolling for main content */
+    margin-top: 55px;
+    position: relative;
 }
 
 .module h2 {
