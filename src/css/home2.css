@@ -1,0 +1,94 @@
+main {
+    margin-top: 50px;
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 10px;
+    font-family: 'josefin sans', 'open sans';
+  }
+  
+  /* Calendar section */
+  .calendar {
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: scroll;
+    height: fit-content;
+  }
+
+  .attendance-percentage {
+    color: green;
+  }
+  
+  /* Test list section */
+  .test-list {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 300px;
+  }
+
+  .test-table {
+    width: 100%;
+  }
+
+  .test-table td {
+    text-align: center;
+    padding: 10px;
+  }
+
+
+  .calendar {
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+  }
+  
+  .calendar-header {
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  
+  .calendar-table {
+    width: 100%;
+  }
+
+  
+  .calendar-table td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .calendar-table .absent {
+    background-color: #f5f5f5; 
+    position: relative;
+  }
+  
+  .calendar-table .absent::after {
+    /* Red circle for absent days */
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button {
+    background-color: #9C50CA;;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 5px;
+    font-size: small;
+    border-radius: 10px;
+    text-decoration: none;
+   }
+   
+   .button:hover {
+    background-color: #a457d3ea;;
+   }
