@@ -48,16 +48,6 @@
         margin-left: 255px;
     }
 }
-/* @media (max-width:1024px) {
-    .module{
-        margin-left: 355px;
-    }
-} */
-/* @media (max-width:820px) {
-    .module{
-        margin-left:155px;
-    }
-} */
 @media (max-width:551px) {
     .module{
         margin-left:205px;
