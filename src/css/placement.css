@@ -1,0 +1,70 @@
+.placement {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 12px;
+    padding: 20px;
+    font-family: 'josefin sans', 'open sans';
+    margin-bottom: 20px;
+    margin-right: 15px;
+   }
+   .content{
+       overflow: auto;
+       margin-top: 55px;
+       position: relative;
+       margin-left: 255px;
+   }
+   .content h1{
+    font-size: xx-large;
+   }
+      
+   .placement h3 {
+    color: #9C50CA;
+    margin-bottom: 15px;
+   }
+   .placement p {
+    margin-bottom: 25px;
+   }
+
+   .button {
+    background-color: #9C50CA;;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+   }
+   
+   .button:hover {
+    background-color: #a457d3ea;;
+   }
+
+ @media (max-width:768px) {
+    .content{
+        margin-left: 255px;
+    }
+}
+@media (max-width:551px) {
+    .content{
+        margin-left:205px;
+    }
+}
+@media (max-width:426px) {
+    .content{
+        margin-left:52px;
+    }
+}
+
+@media (max-width:391px) {
+    .content{
+        margin-left:51px;
+        font-size: small;
+    }
+    .content h3{
+        font-size: small;
+    }
+    .content h1{
+        font-size: x-large;
+       }
+}
