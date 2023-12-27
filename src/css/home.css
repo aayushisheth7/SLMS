@@ -229,7 +229,7 @@ ul>i>li>pre>span:before {
 }
 
 .notification>img {
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 10px;
     width: 35px;
     height: 35px;
@@ -238,6 +238,7 @@ ul>i>li>pre>span:before {
 .profile>img {
     width: 35px;
     height: 35px;
+    margin-right: 15px;
 }
 
 .profile {
