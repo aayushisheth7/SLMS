@@ -182,10 +182,11 @@ ul>i>li>pre>span:before {
     left: 381px;
     margin-top: 10px;
     display: flex;
+    justify-content: space-between;
 }
-
 .srch>form {
     display: flex;
+    flex-grow: 1;
 }
 
 .srchbar {
@@ -214,17 +215,22 @@ ul>i>li>pre>span:before {
 }
 
 .notipro {
-    position: relative;
+    /* position: relative; */
+    display: flex;
     flex: 1;
+    justify-content: flex-end;
     width: 100%;
+    /* padding-left: 5px; */
     height: fit-content;
 }
 
 .notification {
-    float: right;
+    /* float: right; */
 }
 
 .notification>img {
+    margin-right: 10px;
+    margin-left: 10px;
     width: 35px;
     height: 35px;
 }
@@ -235,7 +241,7 @@ ul>i>li>pre>span:before {
 }
 
 .profile {
-    float: right;
+    /* float: right; */
     margin-left: 30px;
     margin-right: 10px;
 }
