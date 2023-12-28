@@ -77,6 +77,19 @@ main {
     font-size: 24px;
     line-height: 1;  /* Align vertically within circle */
   }
+  ::-webkit-scrollbar {
+    width: 10px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide default track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
+    border-radius: 5px; /* Apply rounded corners */
+  }
+  
 
    @media (max-width:768px) {
     main{

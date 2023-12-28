@@ -42,7 +42,19 @@
 .button:hover {
  background-color: #a457d3ea;;
 }
-
+::-webkit-scrollbar {
+    width: 10px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide default track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
+    border-radius: 5px; /* Apply rounded corners */
+  }
+  
 @media (max-width:769px) {
     .module{
         margin-left: 255px;
