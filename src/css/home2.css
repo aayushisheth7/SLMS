@@ -103,7 +103,7 @@ main {
    }
    
    .button:hover {
-    background-color: #a457d3ea;;
+    background-color: #a457d3ea;
    }
 
    @media (max-width:768px) {

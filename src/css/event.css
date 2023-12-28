@@ -11,6 +11,7 @@
        overflow: auto; /* Enable scrolling for main content */
        margin-top: 55px;
        position: relative;
+       font-family: 'josefin sans', 'open sans';
        margin-left: 255px;
    }
       
@@ -37,6 +38,7 @@
   ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
     border-radius: 5px; /* Apply rounded corners */
+
   }
   
 
