@@ -6,23 +6,31 @@ const tbody = document.querySelector('.calendar-table tbody');
 
 let currentDay = 1;
 let currentColumn = 0;
+let b = firstDayOfMonth;
 
-// for (let i = 0; i < firstDayOfMonth; i++) {
-//   const cell = document.createElement('td');
-//   cell.textContent = " "; // Use empty string for visual clarity
+for (let i = 0; i < 7; i++) {
+  const cell = document.createElement('td');
+  if(b<=0){
+    cell.textContent = currentDay;
+    currentDay++;
+  }
+  else{
+  cell.textContent = " "; // Use empty string for visual clarity
+  }
   
 
-//   // Start a new row if needed
-//   if (currentColumn === 0) {
-//     tableRows.push([]);
-//   }
-//   tableRows[tableRows.length - 1].push(cell);
-//   currentColumn = (currentColumn + 1) % 7;
-// }
-for (let i = 0; i < daysInMonth; i++) {
+  // Start a new row if needed
+  if (currentColumn === 0) {
+    tableRows.push([]);
+  }
+  tableRows[tableRows.length - 1].push(cell);
+  currentColumn = (currentColumn + 1) % 7;
+  b--;
+}
+for (let i = 0; i < daysInMonth+b; i++) {
   
   if (i % 7 === 0) {
-    tableRows.push([]); 
+    tableRows.push([]);
   }
 
   const cell = document.createElement('td');
