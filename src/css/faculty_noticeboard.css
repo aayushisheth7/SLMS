@@ -1,61 +1,75 @@
 main {
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 250px;
     flex-grow: 1;
     padding: 10px;
     font-family: 'josefin sans', 'open sans';
   }
   
-  /* Calendar section */
-  .calendar {
+  /* announcement section */
+  .announcement {
     border: 1px solid #ddd;
     padding: 10px;
-    overflow-y: none;
-    height: fit-content;
-  }
-
-  .attendance-percentage {
-    color: green;
+    overflow-y: scroll;
+    height: 300px;
   }
   
-  .calendar {
+  /* news list section */
+  .news-list {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 300px;
+  }
+
+  .news-table {
+    width: 100%;
+  }
+
+  .news-table td {
+    text-align: left;
+    padding: 10px;
+  }
+
+
+  .announcement {
     border-radius: 10px;
     box-shadow: gray 5px 5px 13px;
   }
   
-  .calendar-header {
+  .announcement-header {
     margin-bottom: 15px;
     margin-left: 10px;
   }
   
-  .calendar-table {
+  .announcement-table {
     width: 100%;
   }
 
   
-  .calendar-table td {
-    text-align: center;
+  .announcement-table td {
+    text-align: left;
     padding: 10px;
   }
-  
-  .calendar-table .absent {
-    background-color: #f5f5f5; 
-    position: relative;
-  }
-  
-  .calendar-table .absent::after {
-    /* Red circle for absent days */
-   content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+
+  .button {
+    background-color: #9C50CA;;
+    color: white;
+    padding: 10px 12px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    text-decoration: none;
+   }
+   
+   .button:hover {
+    background-color: #a457d3ea;;
+   }
+
   ::-webkit-scrollbar {
     width: 10px; /* Adjust width as needed */
   }
@@ -90,10 +104,14 @@ main {
     main{
         margin-left:51px;
    }
+   .news-list{
+    font-size: x-small;
+    padding: 2px;
+   }
    .button{
     font-size: xx-small;
    }
-   .calendar{
+   .announcement{
     font-size: small;
    }
     }
