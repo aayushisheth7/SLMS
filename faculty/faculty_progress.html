@@ -119,16 +119,12 @@ placement</a><span>Training/
         </section>
     </main>
     <script>
-        const fileInput = document.getElementById("file"); // Assuming your file input has the ID "file"
+        const fileInput = document.getElementById("file");
         fileInput.addEventListener("change", (event) => {
-    const fileName = event.target.files[0].name; // Get the first selected file's name
-
-    // Do something with the file name, such as:
+    const fileName = event.target.files[0].name;    
     console.log("Selected file name:", fileName);
-    // Display it in a message or placeholder:
     document.getElementById("file-name-display").textContent = fileName;
-});
-
+    });
     </script>
 </body>
 

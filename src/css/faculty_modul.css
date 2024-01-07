@@ -125,14 +125,7 @@ main {
     main{
         margin-left:51px;
    }
-   .news-list{
-    font-size: x-small;
-    padding: 2px;
-   }
    .button{
-    font-size: xx-small;
-   }
-   .announcement{
     font-size: small;
    }
     }

@@ -1,0 +1,87 @@
+main {
+    margin-top: 50px;
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 10px;
+    font-family: 'josefin sans', 'open sans';
+  }
+  
+  /* fee list section */
+  .fee-list {
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+    padding: 10px;
+    padding-top: 20px;
+    overflow-y: scroll;
+    height: 78vh;
+  }
+
+  .fee-table {
+    width: 100%;
+  }
+  .fee-table td {
+    text-align: center;
+    padding: 10px;
+  }
+
+   .button {
+    background-color: #9C50CA;;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    margin-top: 5px;
+    font-size: normal;
+    border-radius: 10px;
+    text-decoration: none;
+   }
+   
+   .button:hover {
+    background-color: #a457d3ea;;
+   }
+   ::-webkit-scrollbar {
+    width: 10px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide default track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
+    border-radius: 5px; /* Apply rounded corners */
+  }
+  
+
+   @media (max-width:768px) {
+    main{
+        margin-left: 255px;
+    }
+}
+@media (max-width:551px) {
+    main{
+        margin-left:205px;
+    }
+}
+@media (max-width:426px) {
+    main{
+        margin-left:52px;
+    }
+}
+
+@media (max-width:391px) {
+    main{
+        margin-left:51px;
+   }
+   .fee-list{
+    font-size: x-small;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+   }
+   .button{
+    font-size: xx-small;
+    padding: 6px 10px;
+   }
+    }
