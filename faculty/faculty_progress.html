@@ -96,7 +96,7 @@ placement</a><span>Training/
                 </fieldset>
 
                 <fieldset>
-                <p>Select Semester</p>
+                <p>Select Module</p>
                 <select name="ModuleName" id="ModuleName">
                     <option value="none"> </option>
                     <option value="Assignmenet">Assignmenet</option>
@@ -109,6 +109,7 @@ placement</a><span>Training/
                 <p>Add file</p>
                 <label for="file" id="file-name">Choose file</label>
                 <input type="file" name="file" id="file">
+                <p id="file-name-display"></p>
                 </fieldset>
                 <div id="submit-button">
                 <input type="submit" value="submit">
@@ -117,6 +118,18 @@ placement</a><span>Training/
 
         </section>
     </main>
+    <script>
+        const fileInput = document.getElementById("file"); // Assuming your file input has the ID "file"
+        fileInput.addEventListener("change", (event) => {
+    const fileName = event.target.files[0].name; // Get the first selected file's name
+
+    // Do something with the file name, such as:
+    console.log("Selected file name:", fileName);
+    // Display it in a message or placeholder:
+    document.getElementById("file-name-display").textContent = fileName;
+});
+
+    </script>
 </body>
 
 </html>
