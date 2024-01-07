@@ -1,0 +1,138 @@
+main {
+    margin-top: 40px;
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 10px;
+    font-family: 'josefin sans', 'open sans';
+  }
+
+  .Module-button{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-top: 15px;
+    margin-bottom: 35px;
+  }
+  
+  .button {
+    background-color: #9C50CA;;
+    color: white;
+    padding: 15px 17px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-decoration: none;
+   }
+   
+   .button:hover {
+    background-color: #a457d3ea;;
+   }
+
+  ::-webkit-scrollbar {
+    width: 10px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide default track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
+    border-radius: 5px; /* Apply rounded corners */
+  }
+  
+  .formModule {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+  }
+  
+  fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  fieldset>p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #9C50CA;
+  }
+  
+  select,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  #submit-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  #submit-button>input[type="submit"] {
+    background-color: #9C50CA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+  }
+  #file{
+    display: none;
+  }
+  #file-name {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #9C50CA;
+    margin-top: 3px;
+    border: 1px solid #9C50CA;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+   @media (max-width:768px) {
+    main{
+        margin-left: 255px;
+    }
+}
+@media (max-width:551px) {
+    main{
+        margin-left:205px;
+    }
+}
+@media (max-width:426px) {
+    main{
+        margin-left:52px;
+    }
+}
+
+@media (max-width:391px) {
+    main{
+        margin-left:51px;
+   }
+   .news-list{
+    font-size: x-small;
+    padding: 2px;
+   }
+   .button{
+    font-size: xx-small;
+   }
+   .announcement{
+    font-size: small;
+   }
+    }
