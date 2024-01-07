@@ -27,8 +27,8 @@ main {
     padding-left: 10px;
   }
   .img>img{
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
   }
   ::-webkit-scrollbar {
     width: 10px; 
