@@ -1,0 +1,112 @@
+main {
+    margin-top: 50px;
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 10px;
+    font-family: 'josefin sans', 'open sans';
+  }
+  
+  /* Calendar section */
+  .calendar {
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: none;
+    height: fit-content;
+  }
+
+  .attendance-percentage {
+    color: green;
+  }
+  
+  .calendar {
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+  }
+  
+  .calendar-header {
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  
+  .calendar-table {
+    width: 100%;
+  }
+
+  
+  .calendar-table td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .calendar-table .absent {
+    background-color: #f5f5f5; 
+    position: relative;
+  }
+  
+  .calendar-table .absent::after {
+    /* Red circle for absent days */
+   content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ::-webkit-scrollbar {
+    width: 10px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide default track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust color as desired */
+    border-radius: 5px; /* Apply rounded corners */
+  }
+  
+  .time {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: gray 5px 5px 13px;
+  }
+  .time-header{
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+
+   @media (max-width:768px) {
+    main{
+        margin-left: 255px;
+    }
+}
+@media (max-width:551px) {
+    main{
+        margin-left:205px;
+    }
+}
+@media (max-width:426px) {
+    main{
+        margin-left:52px;
+    }
+}
+
+@media (max-width:391px) {
+    main{
+        margin-left:51px;
+   }
+   .button{
+    font-size: xx-small;
+   }
+   .calendar{
+    font-size: small;
+   }
+    }
