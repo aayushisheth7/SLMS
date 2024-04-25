@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/placement.php');
+
+$data = new Placement($conn);
+$result = $data->getPlacement();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,42 +76,26 @@ placement</a><span>Training/
 
     <section class="content">
         <h1 style="color: #9C50CA; margin-left: 10px;">They are on campus !!</h1>
-        <div class="placement">
+        <?php
+        $num = $result->num_rows;
+        if($num>0){
+            while($row = $result->fetch_assoc()){
+                extract($row);
+                echo "<div class=\"placement\">";
+                echo " <h3>$name</h3>";
+                echo "<p> $detail</p>";
+                echo "<a href=\"$view\" class=\"button\">View</a>";
+                echo "<a href=\"$apply\" class=\"button\">Apply</a>";
+                echo "</div>";
+            }
+        }
+        ?>
+        <!-- <div class="placement">
             <h3>TechSoft</h3>
             <p>We are product base company and we are hiring for Php and frontend developer </p>
             <a href="#" class="button">View</a>
             <a href="#" class="button">Apply</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <a href="#" class="button">View</a>
-            <a href="#" class="button">Apply</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <a href="#" class="button">View</a>
-            <a href="#" class="button">Apply</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <a href="#" class="button">View</a>
-            <a href="#" class="button">Apply</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <a href="#" class="button">View</a>
-            <a href="#" class="button">Apply</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <a href="#" class="button">View</a>
-            <a href="#" class="button">Apply</a>
-          </div>
+          </div> -->
         </section>
 </body>
 
