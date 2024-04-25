@@ -1,3 +1,15 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/news.php');
+include('../src/php/announcement.php');
+
+$data = new News($conn);
+$result = $data->getNews();
+
+$data1 = new Announcement($conn);
+$result1 = $data1->getAnnouncement();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,30 +87,20 @@ placement</a><span>Training/
             </header>
             <table class="announcement-table">   
           <tbody>
-            <tr>
+            <?php 
+            $num = $result1->num_rows;
+            if($num > 0){
+                while($row = $result1->fetch_assoc()){
+                    extract($row);
+                    echo "<tr>";
+                    echo "<td><li>$announcement</li></td>";
+                    echo "</tr>";
+                }
+            }
+            ?>
+            <!-- <tr>
                 <td><li>New academic programs are being offered.</li></td>
-            </tr>
-            <tr>
-                <td><li>New scholarships are available.</li></td>
-            </tr>
-            <tr>
-                <td><li>Faculty and staff directory updated.</li></td>
-            </tr>
-            <tr>
-                <td><li>Financial aid deadline approaching.</li></td>
-            </tr>
-            <tr>
-                <td><li>New student orientation scheduled.</li></td>
-            </tr>
-            <tr>
-                <td><li>New academic programs are being offered.</li></td>
-            </tr>
-            <tr>
-                <td><li>New student orientation scheduled.</li></td>
-            </tr>
-            <tr>
-                <td><li>New scholarships are available.</li></td>
-            </tr>
+            </tr> -->
             </tbody>
             </table>
           </section>
@@ -107,27 +109,20 @@ placement</a><span>Training/
           <h2 style="color: #9C50CA; margin-left: 10px;">News</h2>
             <table class="news-table">
                 <tbody>
-                    <tr>
+                    <?php
+                    $num1 = $result->num_rows;
+                    if($num1 > 0){
+                        while($row1= $result->fetch_assoc()){
+                            extract($row1);
+                            echo "<tr>";
+                            echo "<td><li>$news</li></td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                         <td><li>College hosts art exhibition</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new HOD for computer department</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College students win awards</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>Students develop new technology to improve water quality.</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                   </table>
         </section>
