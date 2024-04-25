@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/module.php');
+
+$data = new Module($conn);
+$result = $data->getModule();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +72,27 @@ placement</a><span>Training/
         </div>
     </div>
     <section class="content">
-    <div class="module">
+
+    <?php
+    $num = $result->num_rows;
+
+    if($num > 0 ){
+        while($row = $result->fetch_assoc()){
+            extract($row);
+            echo "<div class=\"module\"> ";
+            echo "<h2>$name</h2>";
+            echo "<h3>$type</h3>";
+            echo "<p>$detail</p>";
+            echo "<a href=\"$link\" class=\"button\">View</a>";
+            echo "</div>";
+        }
+    }
+    else{
+        echo json_encode(array('message' => ' nothing'));
+    
+    }
+    ?>
+    <!-- <div class="module">
         <h2>Module 1</h2>
         <h3>Assignments</h3>
         <p>Here is a list of assignments you have to do during this year/month/week.</p>
@@ -99,7 +127,7 @@ placement</a><span>Training/
         <h3>Materials</h3>
         <p>Here is a list of materials that help you to better understand your subject.</p>
         <a href="#" class="button">View</a>
-      </div>
+      </div> -->
     </section>
 </body>
 

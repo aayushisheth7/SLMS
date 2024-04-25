@@ -33,7 +33,7 @@
                     <li><a href="student_finance.html">Finance</a><span>Finance</span></li>
                 </i>
                 <i><a href="student_module.html"><img src="/src/img/icons/document.svg" alt=""></a>
-                    <li><a href="student_module.html">Module</a><span>Module</span></li>
+                    <li><a href="student_module.php">Module</a><span>Module</span></li>
                 </i>
                 <i><a href="student_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
