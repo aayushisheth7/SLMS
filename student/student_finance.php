@@ -1,3 +1,12 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/finance.php');
+session_start();
+
+$data = new Finance($conn,$_SESSION['username']);
+$result = $data->getFees();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +89,36 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                    $num = $result->num_rows;
+                    if($num >0){
+                        while($row=$result->fetch_assoc()){
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td>$id</td>";
+                            echo "<td>$status</td>";
+                            if($date == null){
+                                echo "<td>-</td>";
+                            }else{
+                                $Mdate = date('d-m-y',strtotime($date));
+                                echo "<td>$Mdate</td>";
+                            }
+                            if($recept_no == null){
+                                echo "<td>-</td>";
+                            }else{
+                                echo "<td>$recept_no</td>";
+                            }
+                            echo "<td>$amount</td>";
+                            if($link == null){
+                                echo "<td><a href=\"#\" class=\"button-not\">View</a></td>";
+                            }
+                            else{
+                                echo "<td><a href=\"$link\" class=\"button\">View</a></td>";
+                            }
+                        }
+                    }
+                ?>
+                    <!-- <tr>
                         <td>1</td>
                         <td>Pending</td>
                         <td>-</td>
@@ -95,7 +133,7 @@ placement</a><span>Training/
                         <td>R-133642</td>
                         <td>30,000</td>
                         <td><a href="#" class="button">View</a></td>
-                    </tr>
+                    </tr> -->
     
                   </tbody>
                   </table>
