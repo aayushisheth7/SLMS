@@ -25,10 +25,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("Location: ../../student/student_home.php");
             }
             elseif($row['role'] == "Admin"){
-
+                header("Location: ../../admin/admin_dashboard.php");
             }
             elseif($row['role'] == "Principal"){
-                
+                header("Location: ../../principal/principal_home.php");
             }
         } else {
             header("Location: ../../index.html");

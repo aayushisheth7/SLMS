@@ -32,7 +32,7 @@ $collegeCode = $_POST['college code'];
 
     if ($conn->query($sql) === TRUE) {
         // Redirect to principal dashboard
-        header("Location: principal_home.php");
+        header("Location: ../../principal/principal_home.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

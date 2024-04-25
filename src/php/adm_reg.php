@@ -31,7 +31,7 @@ $sql = "INSERT INTO `admin_reg` (`collegeCode`, `fname`, `mname`, `lname`, `emai
 $insert=mysqli_query($conn,$sql);
 if ($insert) {
     // Registration successful, redirect to student dashboard
-    header("Location: admin_dashboard.php");
+    header("Location: ../../admin/admin_dashboard.php");
     exit();
 } else {  
     echo "Error: " . $sql . "<br>" . $conn->error;
