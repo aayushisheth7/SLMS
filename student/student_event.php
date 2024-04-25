@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/event.php');
+
+$data = new Event($conn);
+$result = $data->getEvent();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,17 +77,26 @@ placement</a><span>Training/
     <section class="content">
         <h1 style="color: #9C50CA; margin-left: 10px;">Upcoming events</h1>
         <h3 style="margin-left: 10px; font-weight: normal;">Here is the event schedule for the upcoming months</h3>
-        <div class="event">
-            <h3>Janmashtami celebration</h3>
-            <h4>Date:5-9-2023</h4>
-            <h4>Time:8:00am to 11:00am</h4>
-            <h4>Place: School </h4>
-            <p>Details: The Hindu god Lord Krishna was born on this day, and people
-                celebrate this day by treating the day as if the Lord has taken birth
-                in their houses.</p>
-          </div>
+        <?php
+        $num = $result->num_rows;
+        if($num>0){
+            while($row = $result->fetch_assoc()){
+                extract($row);
+                echo "<div class=\"event\">";
+                echo "<h3>$name</h3>";
+                $Mdate = date('d-m-y',strtotime($date));
+                echo "<h4>Date: $Mdate</h4>";
+                $amPmTime = date("h:i a", strtotime($timefrom ));
+                $amPmTime2 = date("h:i a", strtotime($timeto ));
+                echo "<h4>Time: $amPmTime to $amPmTime2</h4>";
+                echo "<h4>Place: $place </h4>";
+                echo "<p>Details: $details</p>";
+                echo "</div>";
 
-          <div class="event">
+            }
+        }
+        ?>
+        <!-- <div class="event">
             <h3>Janmashtami celebration</h3>
             <h4>Date:5-9-2023</h4>
             <h4>Time:8:00am to 11:00am</h4>
@@ -87,47 +104,7 @@ placement</a><span>Training/
             <p>Details: The Hindu god Lord Krishna was born on this day, and people
                 celebrate this day by treating the day as if the Lord has taken birth
                 in their houses.</p>
-          </div>
-
-          <div class="event">
-            <h3>Janmashtami celebration</h3>
-            <h4>Date:5-9-2023</h4>
-            <h4>Time:8:00am to 11:00am</h4>
-            <h4>Place: School </h4>
-            <p>Details: The Hindu god Lord Krishna was born on this day, and people
-                celebrate this day by treating the day as if the Lord has taken birth
-                in their houses.</p>
-          </div>
-
-          <div class="event">
-            <h3>Janmashtami celebration</h3>
-            <h4>Date:5-9-2023</h4>
-            <h4>Time:8:00am to 11:00am</h4>
-            <h4>Place: School </h4>
-            <p>Details: The Hindu god Lord Krishna was born on this day, and people
-                celebrate this day by treating the day as if the Lord has taken birth
-                in their houses.</p>
-          </div>
-
-          <div class="event">
-            <h3>Janmashtami celebration</h3>
-            <h4>Date:5-9-2023</h4>
-            <h4>Time:8:00am to 11:00am</h4>
-            <h4>Place: School </h4>
-            <p>Details: The Hindu god Lord Krishna was born on this day, and people
-                celebrate this day by treating the day as if the Lord has taken birth
-                in their houses.</p>
-          </div>
-
-          <div class="event">
-            <h3>Janmashtami celebration</h3>
-            <h4>Date:5-9-2023</h4>
-            <h4>Time:8:00am to 11:00am</h4>
-            <h4>Place: School </h4>
-            <p>Details: The Hindu god Lord Krishna was born on this day, and people
-                celebrate this day by treating the day as if the Lord has taken birth
-                in their houses.</p>
-          </div>
+          </div> -->
         </section>
 </body>
 
