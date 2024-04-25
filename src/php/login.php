@@ -17,9 +17,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($count == 1) {
         $row = mysqli_fetch_assoc($query);
         if (password_verify($password, $row['pass'])) {
-            session_start();
             $_SESSION['username'] = $username;
+            if($row['role'] == "Faculty"){
+                header("Location: ../../faculty/faculty_home.php");
+            }
+            elseif($row['role'] == "Student"){
             header("Location: ../../student/student_home.php");
+            }
+            elseif($row['role'] == "Admin"){
+
+            }
+            elseif($row['role'] == "Principal"){
+                
+            }
         } else {
             header("Location: ../../index.html");
         }

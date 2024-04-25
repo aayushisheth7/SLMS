@@ -30,7 +30,7 @@ $sql = "INSERT INTO `faculty_reg` (`collegeCode`, `fname`, `mname`, `lname`, `em
 
 if ($conn->query($sql) === TRUE) {
     // Redirect to faculty dashboard
-    header("Location: faculty_home.php");
+    header("Location: ../../faculty/faculty_home.php");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
