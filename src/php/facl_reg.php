@@ -1,6 +1,6 @@
 <?php
 include('dbconnect.php');
-$collegeCode = $_POST['college code']; // Adjust this if your form field name is different
+$collegeCode = $_POST['collegeCode']; 
 $firstName = $_POST['fname'];
 $middleName = $_POST['mname'];
 $lastName = $_POST['lname'];
@@ -25,7 +25,7 @@ $targetFile = $targetDirectory . $profileImage;
 move_uploaded_file($_FILES["profileImage"]["tmp_name"], $targetFile);
 
 // Insert data into database
-$sql = "INSERT INTO `faculty_reg` (`college code`, `fname`, `mname`, `lname`, `email`, `gender`, `mobileno`, `qualification`, `position`, `experience`, `expertise`, `emergencycontactname`, `emergencycontactnumber`, `emergencycontactrelation`, `age`, `dob`, `address`, `profileImage`) 
+$sql = "INSERT INTO `faculty_reg` (`collegeCode`, `fname`, `mname`, `lname`, `email`, `gender`, `mobileno`, `qualification`, `position`, `experience`, `expertise`, `emergencycontactname`, `emergencycontactnumber`, `emergencycontactrelation`, `age`, `dob`, `address`, `profileImage`) 
         VALUES ('$collegeCode','$firstName','$middleName','$lastName','$email','$gender','$mobileNumber','$qualification','$position','$teachingExperience','$expertise','$emergencyContactName','$emergencyContactNumber','$emergencyContactRelation','$age','$dateOfBirth','$address','$profileImage')";
 
 if ($conn->query($sql) === TRUE) {
