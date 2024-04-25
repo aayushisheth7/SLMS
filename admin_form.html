@@ -15,7 +15,7 @@
         <form id="registrationForm" action="src/php/adm_reg.php" method="POST">
             <div>
                 <label for="college code">Enter College Code</label>
-                <input type="text" name="college code">
+                <input type="text" name="collegeCode">
             </div>
             <div>
                 <label for="fname">First Name</label>
@@ -137,30 +137,30 @@
         </form>
     </div>
     <script>
-        document.getElementById("registrationForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the default form submission
-            // Your form submission code here
-            var form = event.target;
-            var formData = new FormData(form);
+        // document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        //     event.preventDefault(); // Prevent the default form submission
+        //     // Your form submission code here
+        //     var form = event.target;
+        //     var formData = new FormData(form);
             
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Registration successful, redirect to student dashboard
-                    window.location.href = "src/php/admin_dashboard.php";
-                } else {
-                    // Registration failed, handle error
-                    throw new Error('Registration failed. Please try again.');
-                }
-            })
-            .catch(error => {
-                // Request failed, handle error
-                alert(error.message);
-            });
-        });
+        //     fetch(form.action, {
+        //         method: 'POST',
+        //         body: formData
+        //     })
+        //     .then(response => {
+        //         if (response.ok) {
+        //             // Registration successful, redirect to student dashboard
+        //             window.location.href = "src/php/admin_dashboard.php";
+        //         } else {
+        //             // Registration failed, handle error
+        //             throw new Error('Registration failed. Please try again.');
+        //         }
+        //     })
+        //     .catch(error => {
+        //         // Request failed, handle error
+        //         alert(error.message);
+        //     });
+        // });
     </script>
 </body>
 
