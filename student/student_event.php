@@ -17,27 +17,27 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i><a href="student_home.html"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
-                    <li><a href="student_home.html">Dashboard</a><span>Dashboard</span></li>
+                <i><a href="student_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
+                    <li><a href="student_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="student_class.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="student_class.html">Class</a><span>Class</span></li>
+                <i><a href="student_class.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="student_class.php">Class</a><span>Class</span></li>
                 </i>
-                <i class="active"><a href="student_event.html"><img src="/src/img/icons/calendar_active.svg" alt=""></a>
-                    <li><a href="student_event.html">Events</a><span>Events</span></li>
+                <i class="active"><a href="student_event.php"><img src="/src/img/icons/calendar_active.svg" alt=""></a>
+                    <li><a href="student_event.php">Events</a><span>Events</span></li>
                 </i>
-                <i><a href="student_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="student_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="student_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="student_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="student_finance.html"><img src="/src/img/icons/wallet.svg" alt=""></a>
-                    <li><a href="student_finance.html">Finance</a><span>Finance</span></li>
+                <i><a href="student_finance.php"><img src="/src/img/icons/wallet.svg" alt=""></a>
+                    <li><a href="student_finance.php">Finance</a><span>Finance</span></li>
                 </i>
-                <i><a href="student_module.html"><img src="/src/img/icons/document.svg" alt=""></a>
-                    <li><a href="student_module.html">Module</a><span>Module</span></li>
+                <i><a href="student_module.php"><img src="/src/img/icons/document.svg" alt=""></a>
+                    <li><a href="student_module.php">Module</a><span>Module</span></li>
                 </i>
-                <i><a href="student_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i><a href="student_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
-                        <pre><a href="student_placement.html">Training/
+                        <pre><a href="student_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>
