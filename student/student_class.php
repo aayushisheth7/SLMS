@@ -1,3 +1,21 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/class.php');
+include('../src/php/student_data.php');
+
+$student =  new Student($conn,$_SESSION['username']);
+$student_data = $student->getStudent();
+$sem;
+if ($student_data->num_rows > 0) {
+    while ($row = $student_data->fetch_assoc()) {
+        $sem = $row['sem'];
+    }
+}
+$data = new Classs($conn,$sem);
+$result = $data->getClass();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +100,27 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php
+                    $num = $result->num_rows;
+                    if($num > 0){
+                        while($row = $result->fetch_assoc()){
+                            extract($row);
+                            echo "<tr>";
+                            $amPmTime = date("h:i a", strtotime($timefrom ));
+                            $amPmTime2 = date("h:i a", strtotime($timeto ));
+                            echo "<td>$amPmTime to $amPmTime2</td>";
+                            echo "<td>$mon</td>";
+                            echo "<td>$tue</td>";
+                            echo "<td>$wed</td>";
+                            echo "<td>$thu</td>";
+                            echo "<td>$fri</td>";
+                            echo "<td>$sat</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    
+                    <!-- <tr>
                         <td>7:00 to 8:00</td>
                     </tr>
                     <tr>
@@ -104,7 +142,7 @@ placement</a><span>Training/
                     </tr>
                     <tr>
                         <td>7:00 to 8:00</td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                   </table>
                   <div class="teacher">
