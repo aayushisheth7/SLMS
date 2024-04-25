@@ -98,36 +98,7 @@ placement</a><span>Training/
         <p>Here is a list of assignments you have to do during this year/month/week.</p>
         <a href="#" class="button">View</a>
       </div>
-      <div class="module">
-        <h2>Module 2</h2>
-        <h3>Lab</h3>
-        <p>Here is a list of labs you have to do during this year/month/week.</p>
-        <a href="#" class="button">View</a>
-      </div>
-      <div class="module">
-        <h2>Module 3</h2>
-        <h3>Materials</h3>
-        <p>Here is a list of materials that help you to better understand your subject.</p>
-        <a href="#" class="button">View</a>
-      </div>
-      <div class="module">
-        <h2>Module 3</h2>
-        <h3>Materials</h3>
-        <p>Here is a list of materials that help you to better understand your subject.</p>
-        <a href="#" class="button">View</a>
-      </div>
-      <div class="module">
-        <h2>Module 3</h2>
-        <h3>Materials</h3>
-        <p>Here is a list of materials that help you to better understand your subject.</p>
-        <a href="#" class="button">View</a>
-      </div>
-      <div class="module">
-        <h2>Module 3</h2>
-        <h3>Materials</h3>
-        <p>Here is a list of materials that help you to better understand your subject.</p>
-        <a href="#" class="button">View</a>
-      </div> -->
+     -->
     </section>
 </body>
 

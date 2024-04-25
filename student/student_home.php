@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/test.php');
+
+$data = new Test($conn);
+$result = $data->getTest();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,7 +116,25 @@ placement</a><span>Training/
             </tr>
             </thead>
             <tbody>
-                <tr>
+                <?php
+                $num = $result->num_rows;
+                if($num>0){
+                    while($row = $result->fetch_assoc()){
+                        extract($row);
+                        echo "<tr>";
+                        echo "<td>$id</td>";
+                        echo "<td>$name</td>";
+                        echo "<td>$sub</td>";
+                        $Mdate = date('d-m',strtotime($date));
+                        echo "<td> $Mdate</td>";
+                        echo "<td>$total</td>";
+                        echo "<td>$marks</td>";
+                        echo "<td><a href=\"$link\" class=\"button\">View</a></td>";
+
+                    }
+                }
+                ?>
+                <!-- <tr>
                     <td>1</td>
                     <td>class-test</td>
                     <td>Math</td>
@@ -116,67 +142,7 @@ placement</a><span>Training/
                     <td>30</td>
                     <td>12</td>
                     <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>class-test</td>
-                    <td>Math</td>
-                    <td>16-11</td>
-                    <td>30</td>
-                    <td>12</td>
-                    <td><a href="#" class="button">View</a></td>
-                </tr>
+            -->
               </tbody>
               </table>
     </section>
