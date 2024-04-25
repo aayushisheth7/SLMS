@@ -19,7 +19,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         if (password_verify($password, $row['pass'])) {
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: ../../student/student_home.html");
+            header("Location:student_home.php");
         } else {
             header("Location: ../../index.html");
         }

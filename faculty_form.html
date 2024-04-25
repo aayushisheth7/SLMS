@@ -13,7 +13,7 @@
     <div class="box">
         <h1>Faculty Registration</h1>
         <h6>Please fill in the form below</h6>
-        <form action="src/php/reg.php" method="POST">
+        <form id="registrationForm" action="src/php/facl_reg.php" method="POST">
             <div>
                 <label for="college code">Enter College Code</label>
                 <input type="text" name="college code">
@@ -66,15 +66,15 @@
             </div>
             <div>
                 <label for="emergencycontectname">Emergency Contact Name</label>
-                <input type="text" name="emergencycontectname">
+                <input type="text" name="emergencycontactname">
             </div>
             <div>
                 <label for="emergencycontectnumber">Emergency Contact Number</label>
-                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontectnumber">
+                <input type="number" placeholder="+91 XXXXXXXXXX" name="emergencycontactnumber">
             </div>
             <div>
                 <label for="emergencycontectrelation">Emergency Contact Relation</label>
-                <input type="text" name="emergencycontectrelation">
+                <input type="text" name="emergencycontactrelation">
             </div>
             <div>
                 <label for="age">Age</label>
@@ -99,6 +99,32 @@
 
         </form>
     </div>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Your form submission code here
+            var form = event.target;
+            var formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Registration successful, redirect to student dashboard
+                    window.location.href = "src/php/faculty_home.php";
+                } else {
+                    // Registration failed, handle error
+                    throw new Error('Registration failed. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Request failed, handle error
+                alert(error.message);
+            });
+        });
+    </script>
 </body>
 
 </html>
