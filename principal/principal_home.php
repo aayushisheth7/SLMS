@@ -16,24 +16,24 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.html"><img src="/src/img/icons/deshboard_icon.svg"></a>
-                    <li><a href="principal_home.html">Dashboard</a><span>Dashboard</span></li>
+                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                    <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="principal_student.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="principal_student.html">Student</a><span>Student</span></li>
+                <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="principal_faculty.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="principal_faculty.html">Faculty</a><span>faculty</span></li>
+                <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
-                <i><a href="principal_report.html"><img src="/src/img/icons/report.svg" alt=""></a>
-                    <li><a href="principal_report.html">Report</a><span>Report</span></li>
+                <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                    <li><a href="principal_report.php">Report</a><span>Report</span></li>
                 </i>
-                <i><a href="principal_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="principal_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="principal_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="principal_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i><a href="principal_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
-                        <pre><a href="principal_placement.html">Training/
+                        <pre><a href="principal_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>

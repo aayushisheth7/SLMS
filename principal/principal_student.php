@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/home.css">
     <link rel="stylesheet" href="/src/css/student_home.css">
-    <link rel="stylesheet" href="/src/css/report.css">
+    <link rel="stylesheet" href="/src/css/principal_student.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>Report</title>
+    <title>Students</title>
 </head>
 
 <body>
@@ -17,24 +17,24 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.html"><img src="/src/img/icons/deshboard_icon.svg"></a>
-                    <li><a href="principal_home.html">Dashboard</a><span>Dashboard</span></li>
+                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                    <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="principal_student.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="principal_student.html">Student</a><span>Student</span></li>
+                <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="principal_faculty.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="principal_faculty.html">Faculty</a><span>faculty</span></li>
+                <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
-                <i><a href="principal_report.html"><img src="/src/img/icons/report.svg" alt=""></a>
-                    <li><a href="principal_report.html">Report</a><span>Report</span></li>
+                <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                    <li><a href="principal_report.php">Report</a><span>Report</span></li>
                 </i>
-                <i><a href="principal_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="principal_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="principal_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="principal_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i><a href="principal_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
-                        <pre><a href="principal_placement.html">Training/
+                        <pre><a href="principal_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>
@@ -63,59 +63,60 @@ placement</a><span>Training/
         </div>
     </div>
 
-    <section class="content">
+    <main>
+        <h1 style="color: #9C50CA;">Department Student Details</h1>
+        <section class="content">
         <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>Semester-1</h2>
+            </div>
+            <a href="pri_student.html" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+          </div>
+          <div class="module">
+            <div>
+            <h2>Semester-2</h2>
             </div>
             <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>Semester-3</h2>
             </div>
             <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
 
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>Semester-4</h2>
             </div>
             <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
-
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>Semester-5</h2>
+            </div>
+            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+          </div>
+          <div class="module">
+            <div>
+            <h2>Semester-6</h2>
+            </div>
+            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+          </div>
+          <div class="module">
+            <div>
+            <h2>Semester-7</h2>
+            </div>
+            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+          </div>
+          <div class="module">
+            <div>
+            <h2>Semester-8</h2>
             </div>
             <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
         </section>
+    </main>
 </body>
 
 </html>
