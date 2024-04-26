@@ -16,21 +16,21 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="admin_dashboard.html"><img src="/src/img/icons/deshboard_icon.svg"></a>
-                    <li><a href="admin_dashboard.html">Dashboard</a><span>Dashboard</span></li>
+                <i class="active"><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                    <li><a href="admin_dashboard.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="admin_admission.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="admin_admission.html">Admission</a><span>Admission</span></li>
+                <i><a href="admin_admission.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="admin_admission.php">Admission</a><span>Admission</span></li>
                 </i>
-                <i><a href="admin_fees.html"><img src="/src/img/icons/report.svg" alt=""></a>
-                    <li><a href="admin_fees.html">Fees detail</a><span>Fees detail</span></li>
+                <i><a href="admin_fees.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                    <li><a href="admin_fees.php">Fees detail</a><span>Fees detail</span></li>
                 </i>
-                <i><a href="admin_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="admin_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="admin_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="admin_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="admin_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i><a href="admin_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
-                        <pre><a href="admin_placement.html">Training/
+                        <pre><a href="admin_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>
