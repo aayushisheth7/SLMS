@@ -4,6 +4,7 @@ class Module{
     private $table="module";
 
     public $id;
+    public $sem;
     public $name;
     public $type;
     public $detail;
@@ -13,8 +14,15 @@ class Module{
         $this->conn = $conn;
     }
 
-    public function getModule(){
-        $query = "SELECT * FROM `".$this->table."`";
+    public function getModule($sem){
+        $query = "SELECT * FROM `".$this->table."` WHERE sem =".$sem;
+        $insert=mysqli_query($this->conn,$query);
+        return $insert;
+    }
+
+    public function setModule($sem,$name,$type,$link,$detail){
+        // INSERT INTO `module`(`id`, `sem`, `name`, `type`, `detail`, `link`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
+        $query = "INSERT INTO `".$this->table."` (`sem`, `name`,`type`, `detail`,`link`) VALUES ('$sem','$name','$type','$detail','$link')";
         $insert=mysqli_query($this->conn,$query);
         return $insert;
     }

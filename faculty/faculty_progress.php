@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/module.php');
+
+$data = new Module($conn);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,24 +25,24 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i ><a href="faculty_home.html"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
-                    <li><a href="faculty_home.html">Dashboard</a><span>Dashboard</span></li>
+                <i ><a href="faculty_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
+                    <li><a href="faculty_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="faculty_student.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="faculty_student.html">Student</a><span>Student</span></li>
+                <i><a href="faculty_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="faculty_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="faculty_report.html"><img src="/src/img/icons/report.svg" alt=""></a>
-                    <li><a href="faculty_report.html">Report</a><span>Report</span></li>
+                <i><a href="faculty_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                    <li><a href="faculty_report.php">Report</a><span>Report</span></li>
                 </i>
-                <i><a href="faculty_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="faculty_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="faculty_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="faculty_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i class="active"><a href="faculty_progress.html"><img src="/src/img/icons/document_active.svg" alt=""></a>
-                    <li><a href="faculty_progress.html">Module</a><span>Module</span></li>
+                <i class="active"><a href="faculty_progress.php"><img src="/src/img/icons/document_active.svg" alt=""></a>
+                    <li><a href="faculty_progress.php">Module</a><span>Module</span></li>
                 </i>
-                <i><a href="faculty_placement.html"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i><a href="faculty_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
                     <li>
-                        <pre><a href="faculty_placement.html">Training/
+                        <pre><a href="faculty_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>
@@ -79,19 +87,19 @@ placement</a><span>Training/
         </section>
         <section class="add-new">
             <h2 style="color: #9C50CA; margin-top: 10px;">Add New Module</h2>
-            <form action="" method="post" class="formModule">
+            <form action="" method="post" class="formModule" enctype="multipart/form-data">
                 <fieldset>
                 <p>Select Semester</p>
                 <select name="sem" id="sem">
                     <option value="none"> </option>
-                    <option value="sem1">sem-1</option>
-                    <option value="sem2">sem-2</option>
-                    <option value="sem3">sem-3</option>
-                    <option value="sem4">sem-4</option>
-                    <option value="sem5">sem-5</option>
-                    <option value="sem6">sem-6</option>
-                    <option value="sem7">sem-7</option>
-                    <option value="sem8">sem-8</option>
+                    <option value="1">sem-1</option>
+                    <option value="2">sem-2</option>
+                    <option value="3">sem-3</option>
+                    <option value="4">sem-4</option>
+                    <option value="5">sem-5</option>
+                    <option value="6">sem-6</option>
+                    <option value="7">sem-7</option>
+                    <option value="8">sem-8</option>
                 </select>
                 </fieldset>
 
@@ -104,6 +112,13 @@ placement</a><span>Training/
                     <option value="material">material</option>
                 </select>
                 </fieldset>
+
+                <fieldset>
+                <p>Detail</p>
+                <input style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc;
+    border-radius: 8px;" type="text" name="detail" id="ModuleName"/>
+                </fieldset>
+                
                 
                 <fieldset>
                 <p>Add file</p>
@@ -118,6 +133,20 @@ placement</a><span>Training/
 
         </section>
     </main>
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // $data->type = $_POST['ModuleName'];
+        $fileName  =  $_FILES['file']['name'];
+        $tempPath  =  $_FILES['file']['tmp_name'];
+        $fileSize  =  $_FILES['file']['size'];
+        // $data->link= $fileName;
+        // $data->name = $fileName;
+        $upload_path = "../module/";
+        move_uploaded_file($tempPath, $upload_path . $fileName);
+        $result = $data->setModule($_POST['sem'],$fileName, $_POST['ModuleName'],$fileName,$_POST['detail']);
+    }
+?>
     <script>
         const fileInput = document.getElementById("file");
         fileInput.addEventListener("change", (event) => {

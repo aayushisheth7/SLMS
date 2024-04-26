@@ -1,9 +1,20 @@
 <?php
+session_start();
 include('../src/php/dbconnect.php');
 include('../src/php/module.php');
+include('../src/php/student_data.php');
+
+$student =  new Student($conn,$_SESSION['username']);
+$student_data = $student->getStudent();
+$sem;
+if ($student_data->num_rows > 0) {
+    while ($row = $student_data->fetch_assoc()) {
+        $sem = $row['sem'];
+    }
+}
 
 $data = new Module($conn);
-$result = $data->getModule();
+$result = $data->getModule($sem);
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +94,7 @@ placement</a><span>Training/
             echo "<h2>$name</h2>";
             echo "<h3>$type</h3>";
             echo "<p>$detail</p>";
-            echo "<a href=\"$link\" class=\"button\">View</a>";
+            echo "<a href=\"http://slms/module/$link\" download=\"$link\" class=\"button\">View</a>";
             echo "</div>";
         }
     }
