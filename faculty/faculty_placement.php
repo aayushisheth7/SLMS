@@ -17,24 +17,24 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i ><a href="faculty_home.html"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
-                    <li><a href="faculty_home.html">Dashboard</a><span>Dashboard</span></li>
+                <i ><a href="faculty_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
+                    <li><a href="faculty_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="faculty_student.html"><img src="/src/img/icons/clieant.svg" alt=""></a>
-                    <li><a href="faculty_student.html">Student</a><span>Student</span></li>
+                <i><a href="faculty_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                    <li><a href="faculty_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="faculty_report.html"><img src="/src/img/icons/report.svg" alt=""></a>
-                    <li><a href="faculty_report.html">Report</a><span>Report</span></li>
+                <i><a href="faculty_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                    <li><a href="faculty_report.php">Report</a><span>Report</span></li>
                 </i>
-                <i><a href="faculty_noticeboard.html"><img src="/src/img/icons/note text.svg" alt=""></a>
-                    <li><a href="faculty_noticeboard.html">Noticeboard</a><span>Noticeboard</span></li>
+                <i><a href="faculty_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                    <li><a href="faculty_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="faculty_progress.html"><img src="/src/img/icons/document.svg" alt=""></a>
-                    <li><a href="faculty_progress.html">Module</a><span>Module</span></li>
+                <i><a href="faculty_progress.php"><img src="/src/img/icons/document.svg" alt=""></a>
+                    <li><a href="faculty_progress.php">Module</a><span>Module</span></li>
                 </i>
-                <i class="active"><a href="faculty_placement.html"><img src="/src/img/icons/briefcase_active.svg" alt=""></a>
+                <i class="active"><a href="faculty_placement.php"><img src="/src/img/icons/briefcase_active.svg" alt=""></a>
                     <li>
-                        <pre><a href="faculty_placement.html">Training/
+                        <pre><a href="faculty_placement.php">Training/
 placement</a><span>Training/
     placement</span></pre>
                     </li>
