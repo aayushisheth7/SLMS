@@ -9,6 +9,49 @@
     <link rel="stylesheet" href="/src/css/faculty_noticeboard.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Noticeboard</title>
+    <style>
+        /* Styles for dialog box */
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dialog h2 {
+            margin-top: 0;
+        }
+
+        .dialog input[type="text"],
+        .dialog textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .dialog button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .dialog button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -69,7 +112,7 @@ placement</a><span>Training/
             <header class="calendar-header">
                 <h3 style="color: #9C50CA; margin-left: 10px;">Announcement</h3>
             </header>
-            <button class="button">Add New</button>
+            <button id="addNewAnn" class="button">Add New</button>
             <table class="announcement-table">   
           <tbody>
             <tr>
@@ -102,10 +145,10 @@ placement</a><span>Training/
     
         <section class="news-list">
           <h2 style="color: #9C50CA; margin-left: 10px;">News</h2>
-          <button class="button">Add New</button>
+          <button  id="addNewNews" class="button">Add New</button>
             <table class="news-table">
                 <tbody>
-                    <tr>
+                    <tr> 
                         <td><li>College hosts art exhibition</li></td>
                     </tr>
                     <tr>
@@ -131,6 +174,59 @@ placement</a><span>Training/
         </section>
     
       </main>
+      <div id="dialogAnn" class="dialog">
+        <h2>Add Announcement</h2>
+        <form id="dialogForm">
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="description" placeholder="Description" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="dialogNews" class="dialog">
+        <h2>Add News</h2>
+        <form id="dialogForm">
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="description" placeholder="Description" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addNewAnn = document.getElementById("addNewAnn");
+            const addNewNews = document.getElementById("addNewNews");
+            const dialogAnn = document.getElementById("dialogAnn");
+            const dialogNews = document.getElementById("dialogNews");
+            const dialogForm = document.getElementById("dialogForm");
+
+            addNewAnn.addEventListener("click", function () {
+                dialogAnn.style.display = "block";
+            });
+            addNewNews.addEventListener("click", function () {
+                dialogNews.style.display = "block";
+            });
+
+            dialogForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Get form data
+                const formData = new FormData(dialogForm);
+                const title = formData.get("title");
+                const description = formData.get("description");
+
+                // Do something with the form data (e.g., submit to server)
+                console.log("Title:", title);
+                console.log("Description:", description);
+
+                // Clear form fields
+                dialogForm.reset();
+
+                // Hide the dialog box
+                dialogAnn.style.display = "none";
+                dialogNews.style.display = "none";
+            });
+        });
+    </script>
 </body>
 
 </html>
