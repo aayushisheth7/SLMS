@@ -58,7 +58,8 @@ placement</a><span>Training/
                 <img src="/src/img/icons/notification.svg" alt="">
             </div>
             <div class="profile">
-                <img src="/src/img/icons/profile.svg" alt="">
+            <a class="profile" href="principal_profile.html">
+                <img src="/src/img/icons/profile.svg" alt=""></a>
             </div>
         </div>
     </div>
