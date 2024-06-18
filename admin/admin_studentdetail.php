@@ -62,7 +62,7 @@ placement</a><span>Training/
     </div>
 
     <main>
-        <h2 style="color: #9C50CA;">ABC XYZ</h2>
+        <h2 style="color: #9C50CA;">Bhatt Nishiket</h2>
         <section class="info">
             <h3 style="color: #9C50CA;">General Information</h3>
             <div class="img">
@@ -70,7 +70,7 @@ placement</a><span>Training/
                 <section style="display: flex; flex-flow: column; margin-left: 10px;" >
                     <div style="display: flex;">
                     <p class="lable">Name:</p>
-                    <p>ABC XYZ</p>
+                    <p>Bhatt Nishiket</p>
                 </div>
                     <div style="display: flex;">
                         <p class="lable">Enrollment No.:</p>

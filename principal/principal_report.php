@@ -70,7 +70,7 @@ placement</a><span>Training/
             <h2>I.T Sem-1 Class B</h2>
             <p>from 210430116108 to 210430116150</p>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="princi-student_report.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>

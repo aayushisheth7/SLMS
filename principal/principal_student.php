@@ -71,7 +71,7 @@ placement</a><span>Training/
             <div>
             <h2>Semester-1</h2>
             </div>
-            <a href="pri_student.html" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_student.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>

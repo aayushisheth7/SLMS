@@ -79,7 +79,7 @@ placement</a><span>Training/
                     <tr>
                         <td>1.</td>
                         <td>Nikunj B. Nayak</td>
-                        <td><a href="pri_faculty_detail.html" class="button">View Details</a></td>
+                        <td><a href="pri_faculty_detail.php" class="button">View Details</a></td>
                     </tr>
                     <tr>
                         <td>2.</td>

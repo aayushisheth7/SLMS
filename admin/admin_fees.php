@@ -68,7 +68,7 @@ placement</a><span>Training/
             <div>
             <h2>Information Technology</h2>
             </div>
-            <a href="adminfee_it.html" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="adminfee_it.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
