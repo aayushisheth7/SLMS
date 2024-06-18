@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/src/css/student_home.css">
     <link rel="stylesheet" href="/src/css/student_number.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>Students</title>
+    <title>Report</title>
 </head>
 
 <body>
@@ -77,15 +77,41 @@ placement</a><span>Training/
                 </thead>
                 <tbody>
                     <tr>
-                        <td>210430116103</td>
-                        <td>Bhatt Nishiket</td>
-                        <td><a href="student_detail.php" class="button">View Details</a></td>
+                        <td>210430116108</td>
+                        <td>Kakadiya Dharmi</td>
+                        <td><a href="fac-student(report)_detail.php" class="button">View Report</a></td>
                     </tr>
                     <tr>
-                        <td>210430116114</td>
+                        <td>210430116109</td>
                         <td>AABB</td>
-                        <td><a href="#" class="button">View Details</a></td>
+                        <td><a href="#" class="button">View Report</a></td>
                     </tr>
+                    <tr>
+                        <td>210430116110</td>
+                        <td>BBCD</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116111</td>
+                        <td>XYZ</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116130</td>
+                        <td>LMN</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116140</td>
+                        <td>ABCD</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116150</td>
+                        <td>PQR</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+    
     
                   </tbody>
                   </table>
