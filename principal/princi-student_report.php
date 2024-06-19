@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/home.css">
     <link rel="stylesheet" href="/src/css/principal_home.css">
+    <link rel="stylesheet" href="/src/css/student_home.css">
+    <link rel="stylesheet" href="/src/css/student_number.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Dashboard</title>
 </head>
@@ -61,36 +63,60 @@ placement</a><span>Training/
             </div>
         </div>
     </div>
+    
     <main>
-        <h1 style="color: #9C50CA;">Welcome !</h1>
-        <section class="calendar">
-            <header class="calendar-header">
-                <h3 style="color: #9C50CA;">Your Schedule</h3>
-              <!-- <div class="prev-month">⬅</div> -->
-              <div class="month-year">December 2023</div>
-              <!-- <div class="next-month">➡</div> -->
-            </header>
-            <table class="calendar-table">   
-          <thead>
-          <tr> 
-          <th>Sun</th>    
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-          </tr>
-          </thead>
-          <tbody>
-            </tbody>
-            </table>
-          </section>
-
-         
-          
+        <h2 style="color: #9C50CA;">Semester-1</h2>
+        <section class="fee-list">
+            <table class="fee-table">   
+                <thead>
+                <tr> 
+                <th>Enroll No.</th>    
+                <th>Name</th>
+                <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>210430116108</td>
+                        <td>Kakadiya Dharmi</td>
+                        <td><a href="princi-student(report)_detail.php" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116109</td>
+                        <td>AABB</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116110</td>
+                        <td>BBCD</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116111</td>
+                        <td>XYZ</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116130</td>
+                        <td>LMN</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116140</td>
+                        <td>ABCD</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+                    <tr>
+                        <td>210430116150</td>
+                        <td>PQR</td>
+                        <td><a href="#" class="button">View Report</a></td>
+                    </tr>
+    
+    
+                  </tbody>
+                  </table>
+        </section>
     </main>
-    <script src="/src/js/cel.js"></script>
 </body>
 
 </html>

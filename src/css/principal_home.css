@@ -69,19 +69,7 @@ main {
     border-radius: 5px; /* Apply rounded corners */
   }
   
-  .time {
-    border: 1px solid #ddd;
-    margin-top: 20px;
-    padding: 10px;
-    overflow-y: scroll;
-    height: 300px;
-    border-radius: 10px;
-    box-shadow: gray 5px 5px 13px;
-  }
-  .time-header{
-    margin-bottom: 15px;
-    margin-left: 10px;
-  }
+  
 
    @media (max-width:768px) {
     main{

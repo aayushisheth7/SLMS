@@ -71,7 +71,7 @@ placement</a><span>Training/
             <div>
             <h2>Information Technology</h2>
             </div>
-            <a href="pri_faculty.html" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>

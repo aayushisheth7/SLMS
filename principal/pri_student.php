@@ -79,7 +79,7 @@ placement</a><span>Training/
                     <tr>
                         <td>210430116103</td>
                         <td>Bhatt Nishiket</td>
-                        <td><a href="pri_student_detail.html" class="button">View Details</a></td>
+                        <td><a href="pri_student_detail.php" class="button">View Details</a></td>
                     </tr>
                     <tr>
                         <td>210430116114</td>

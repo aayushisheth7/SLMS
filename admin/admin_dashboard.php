@@ -84,12 +84,7 @@ placement</a><span>Training/
             </table>
           </section>
 
-          <section class="time">
-            <header class="time-header">
-                <h3 style="color: #9C50CA;">Your TimeTable</h3>
-            </header>
-
-          </section>
+         
           
     </main>
     <script src="/src/js/cel.js"></script>
