@@ -26,6 +26,13 @@ class Module{
         $insert=mysqli_query($this->conn,$query);
         return $insert;
     }
+
+    public function deeleteModule($id){
+        // DELETE FROM `module` WHERE id = id
+        $query = "DELETE FROM `".$this->table."` WHERE id =".$id;
+        $insert=mysqli_query($this->conn,$query);
+        return $insert;
+    }
 }
 
 ?>

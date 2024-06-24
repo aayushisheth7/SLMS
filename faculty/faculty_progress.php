@@ -76,14 +76,14 @@ placement</a><span>Training/
         <section class="previous-module">
             <h2 style="color: #9C50CA; margin-top: 10px;">Previous Module</h2>
             <div class="Module-button">
-                <a href="prev_module.php" class="button">sem-1 ></a>
-                <a class="button">sem-2 ></a>
-                <a class="button">sem-3 ></a>
-                <a class="button">sem-4 ></a>
-                <a class="button">sem-5 ></a>
-                <a class="button">sem-6 ></a>
-                <a class="button">sem-7 ></a>
-                <a class="button">sem-8 ></a>
+                <a href="prev_module.php?sem=1" class="button">sem-1 ></a>
+                <a href="prev_module.php?sem=2" class="button">sem-2 ></a>
+                <a href="prev_module.php?sem=3" class="button">sem-3 ></a>
+                <a href="prev_module.php?sem=4" class="button">sem-4 ></a>
+                <a href="prev_module.php?sem=5" class="button">sem-5 ></a>
+                <a href="prev_module.php?sem=6" class="button">sem-6 ></a>
+                <a href="prev_module.php?sem=7" class="button">sem-7 ></a>
+                <a href="prev_module.php?sem=8" class="button">sem-8 ></a>
             </div>
         </section>
         <section class="add-new">

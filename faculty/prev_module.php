@@ -1,3 +1,33 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/module.php');
+
+// Check if the request is to delete a module
+if (isset($_POST['delete_id'])) {
+    $id = $_POST['delete_id'];
+
+    $data = new Module($conn);
+    $result = $data->deeleteModule($id);
+
+    if ($result) {
+        echo "Module deleted successfully.";
+    } else {
+        echo "Failed to delete module.";
+    }
+    exit; 
+}
+
+$sem;
+if (isset($_GET['sem'])) {
+    $sem = $_GET['sem'];
+    echo "Selected Semester: " . $sem;
+}
+
+$data = new Module($conn);
+$result = $data->getModule($sem);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +39,22 @@
     <link rel="stylesheet" href="/src/css/module.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <title>Previous Module</title>
+    <script>
+        function deleteModule(id) {
+            if (confirm("Are you sure you want to delete this module?")) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "prev_module.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert(xhr.responseText);
+                        location.reload();
+                    }
+                };
+                xhr.send("delete_id=" + id);
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -66,54 +112,31 @@ placement</a><span>Training/
 
     <main>
         <section class="content">
-            <div class="module">
+        <?php
+    $num = $result->num_rows;
+
+    if($num > 0 ){
+        while($row = $result->fetch_assoc()){
+            extract($row);
+            echo "<div class=\"module\"> ";
+            echo "<h2>$name</h2>";
+            echo "<h3>$type</h3>";
+            echo "<p>$detail</p>";
+            echo "<button class=\"button\" onclick=\"deleteModule($id)\">Delete</button>";
+            echo "</div>";
+        }
+    }
+    else{
+        echo json_encode(array('message' => ' nothing'));
+    
+    }
+    ?>
+            <!-- <div class="module">
                 <h2>Module 1</h2>
                 <h3>Assignments</h3>
                 <p>Here is a list of assignments you have to do during this year/month/week.</p>
                 <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
-            <div class="module">
-                <h2>Module 1</h2>
-                <h3>Assignments</h3>
-                <p>Here is a list of assignments you have to do during this year/month/week.</p>
-                <a href="#" class="button">Delete</a>
-            </div>
+            </div> -->
         </section>
         
     </main>
