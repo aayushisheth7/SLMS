@@ -3,25 +3,22 @@ include('../src/php/dbconnect.php');
 include('../src/php/news.php');
 include('../src/php/announcement.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if (isset($_GET['announcement'])) {
+        $announcementText = $_GET['announcement'];
 
-    if (isset($data['announcement'])) {
         $announcement = new Announcement($conn);
-        $result = $announcement->addAnnouncement($data['announcement']);
-
-        echo json_encode(['status' => $result ? 'success' : 'error']);
-        exit;
+        $result = $announcement->addAnnouncement($announcementText);
     }
 
-    if (isset($data['news'])) {
-        $news = new News($conn);
-        $result = $news->addNews($data['news']);
+    if (isset($_GET['news'])) {
+        $newsText = $_GET['news'];
 
-        echo json_encode(['status' => $result ? 'success' : 'error']);
-        exit;
+        $news = new News($conn);
+        $result = $news->addNews($newsText);
     }
 }
+
 
 
 
@@ -208,77 +205,80 @@ placement</a><span>Training/
         </form>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const dialogAnn = document.getElementById("dialogAnn");
-        const dialogNews = document.getElementById("dialogNews");
-        const dialogFormAnn = document.getElementById("dialogFormAnn");
-        const dialogFormNews = document.getElementById("dialogFormNews");
+        document.addEventListener("DOMContentLoaded", function() {
+            const dialogAnn = document.getElementById("dialogAnn");
+            const dialogNews = document.getElementById("dialogNews");
+            const dialogFormAnn = document.getElementById("dialogFormAnn");
+            const dialogFormNews = document.getElementById("dialogFormNews");
 
-        document.getElementById("addNewAnn").addEventListener("click", function () {
-            dialogAnn.style.display = "block";
-        });
-        
+            document.getElementById("addNewAnn").addEventListener("click", function() {
+                dialogAnn.style.display = "block";
+            });
 
-        document.getElementById("addNewNews").addEventListener("click", function () {
-            dialogNews.style.display = "block";
-        });
+            document.getElementById("addNewNews").addEventListener("click", function() {
+                dialogNews.style.display = "block";
+            });
 
-        dialogFormAnn.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
+            dialogFormAnn.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
 
-            const formData = new FormData(dialogFormAnn);
-            const announcement = formData.get("announcement");
+                const formData = new FormData(dialogFormAnn);
+                const announcement = encodeURIComponent(formData.get("announcement"));
+                const url = `${window.location.href}?announcement=${announcement}`;
 
-            fetch(window.location.href, {
-                method: 'POST',
-                body: JSON.stringify({ announcement }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    dialogFormAnn.reset();
-                    dialogAnn.style.display = "none";
-                    // Optionally update the announcements section
-                    // Example: document.getElementById("announcementTable").innerHTML = ...
-                } else {
-                    alert('Failed to add announcement.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to add announcement.');
+                fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            dialogFormAnn.reset();
+                            dialogAnn.style.display = "none";
+                            // Optionally update the announcements section
+                            // Example: document.getElementById("announcementTable").innerHTML = ...
+                        } else {
+                            alert('Failed to add announcement.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Failed to add announcement.');
+                    });
+            });
+
+            dialogFormNews.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                const formData = new FormData(dialogFormNews);
+                const news = encodeURIComponent(formData.get("news"));
+                const url = `${window.location.href}?news=${news}`;
+
+                fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            dialogFormNews.reset();
+                            dialogNews.style.display = "none";
+                            // Optionally update the news section
+                            // Example: document.getElementById("newsTable").innerHTML = ...
+                        } else {
+                            alert('Failed to add news.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Failed to add news.');
+                    });
             });
         });
-
-        dialogFormNews.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-
-            const formData = new FormData(dialogFormNews);
-            const news = formData.get("news");
-
-            fetch(window.location.href, {
-                method: 'POST',
-                body: JSON.stringify({ news }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    dialogFormNews.reset();
-                    dialogNews.style.display = "none";
-                    // Optionally update the news section
-                    // Example: document.getElementById("newsTable").innerHTML = ...
-                } else {
-                    alert('Failed to add news.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to add news.');
-            });
-        });
-    });
     </script>
 </body>
 
