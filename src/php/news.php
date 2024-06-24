@@ -15,6 +15,13 @@ class News{
         $insert=mysqli_query($this->conn,$query);
         return $insert;
     }
+
+    public function addNews($news){
+        // INSERT INTO `news`(`id`, `news`) VALUES ('[value-1]','[value-2]')
+        $query = "INSERT INTO `".$this->table."` (`news`) VALUES ('$news')";
+        $insert=mysqli_query($this->conn,$query);
+        return $insert;
+    }
 }
 
 ?>

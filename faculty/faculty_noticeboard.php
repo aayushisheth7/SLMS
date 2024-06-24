@@ -1,3 +1,37 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/news.php');
+include('../src/php/announcement.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if (isset($data['announcement'])) {
+        $announcement = new Announcement($conn);
+        $result = $announcement->addAnnouncement($data['announcement']);
+
+        echo json_encode(['status' => $result ? 'success' : 'error']);
+        exit;
+    }
+
+    if (isset($data['news'])) {
+        $news = new News($conn);
+        $result = $news->addNews($data['news']);
+
+        echo json_encode(['status' => $result ? 'success' : 'error']);
+        exit;
+    }
+}
+
+
+
+$data = new News($conn);
+$result = $data->getNews();
+
+$data1 = new Announcement($conn);
+$result1 = $data1->getAnnouncement();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +94,7 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i ><a href="faculty_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
+                <i><a href="faculty_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="faculty_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="faculty_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -101,8 +135,8 @@ placement</a><span>Training/
                 <img src="/src/img/icons/notification.svg" alt="">
             </div>
             <div class="profile">
-            <a class="profile" href="faculty_profile.html">
-                <img src="/src/img/icons/profile.svg" alt=""></a>
+                <a class="profile" href="faculty_profile.html">
+                    <img src="/src/img/icons/profile.svg" alt=""></a>
             </div>
         </div>
     </div>
@@ -114,72 +148,54 @@ placement</a><span>Training/
                 <h3 style="color: #9C50CA; margin-left: 10px;">Announcement</h3>
             </header>
             <button id="addNewAnn" class="button">Add New</button>
-            <table class="announcement-table">   
-          <tbody>
-            <tr>
+            <table class="announcement-table">
+                <tbody>
+                    <?php
+                    $num = $result1->num_rows;
+                    if ($num > 0) {
+                        while ($row = $result1->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td><li>$announcement</li></td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                 <td><li>New academic programs are being offered.</li></td>
-            </tr>
-            <tr>
-                <td><li>New scholarships are available.</li></td>
-            </tr>
-            <tr>
-                <td><li>Faculty and staff directory updated.</li></td>
-            </tr>
-            <tr>
-                <td><li>Financial aid deadline approaching.</li></td>
-            </tr>
-            <tr>
-                <td><li>New student orientation scheduled.</li></td>
-            </tr>
-            <tr>
-                <td><li>New academic programs are being offered.</li></td>
-            </tr>
-            <tr>
-                <td><li>New student orientation scheduled.</li></td>
-            </tr>
-            <tr>
-                <td><li>New scholarships are available.</li></td>
-            </tr>
-            </tbody>
+            </tr> -->
+                </tbody>
             </table>
-          </section>
-    
+        </section>
+
         <section class="news-list">
-          <h2 style="color: #9C50CA; margin-left: 10px;">News</h2>
-          <button  id="addNewNews" class="button">Add New</button>
+            <h2 style="color: #9C50CA; margin-left: 10px;">News</h2>
+            <button id="addNewNews" class="button">Add New</button>
             <table class="news-table">
                 <tbody>
-                    <tr> 
+                    <?php
+                    $num1 = $result->num_rows;
+                    if ($num1 > 0) {
+                        while ($row1 = $result->fetch_assoc()) {
+                            extract($row1);
+                            echo "<tr>";
+                            echo "<td><li>$news</li></td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr> 
                         <td><li>College hosts art exhibition</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new HOD for computer department</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College students win awards</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>Students develop new technology to improve water quality.</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
-                    <tr>
-                        <td><li>College announces new scholarship program</li></td>
-                    </tr>
-                  </tbody>
-                  </table>
+                    </tr> -->
+                </tbody>
+            </table>
         </section>
-    
-      </main>
-      <div id="dialogAnn" class="dialog">
+
+    </main>
+    <div id="dialogAnn" class="dialog">
         <h2>Add Announcement</h2>
         <form id="dialogForm">
-            <input type="text" name="title" placeholder="Title" required><br>
-            <textarea name="description" placeholder="Description" required></textarea><br>
+            <textarea name="announcement" placeholder="Announcement" required></textarea><br>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -187,46 +203,82 @@ placement</a><span>Training/
     <div id="dialogNews" class="dialog">
         <h2>Add News</h2>
         <form id="dialogForm">
-            <input type="text" name="title" placeholder="Title" required><br>
-            <textarea name="description" placeholder="Description" required></textarea><br>
+            <textarea name="news" placeholder="News" required></textarea><br>
             <button type="submit">Submit</button>
         </form>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const addNewAnn = document.getElementById("addNewAnn");
-            const addNewNews = document.getElementById("addNewNews");
-            const dialogAnn = document.getElementById("dialogAnn");
-            const dialogNews = document.getElementById("dialogNews");
-            const dialogForm = document.getElementById("dialogForm");
+        const dialogAnn = document.getElementById("dialogAnn");
+        const dialogNews = document.getElementById("dialogNews");
+        const dialogFormAnn = document.getElementById("dialogFormAnn");
+        const dialogFormNews = document.getElementById("dialogFormNews");
 
-            addNewAnn.addEventListener("click", function () {
-                dialogAnn.style.display = "block";
-            });
-            addNewNews.addEventListener("click", function () {
-                dialogNews.style.display = "block";
-            });
+        document.getElementById("addNewAnn").addEventListener("click", function () {
+            dialogAnn.style.display = "block";
+        });
+        
 
-            dialogForm.addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent the form from submitting normally
+        document.getElementById("addNewNews").addEventListener("click", function () {
+            dialogNews.style.display = "block";
+        });
 
-                // Get form data
-                const formData = new FormData(dialogForm);
-                const title = formData.get("title");
-                const description = formData.get("description");
+        dialogFormAnn.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
 
-                // Do something with the form data (e.g., submit to server)
-                console.log("Title:", title);
-                console.log("Description:", description);
+            const formData = new FormData(dialogFormAnn);
+            const announcement = formData.get("announcement");
 
-                // Clear form fields
-                dialogForm.reset();
-
-                // Hide the dialog box
-                dialogAnn.style.display = "none";
-                dialogNews.style.display = "none";
+            fetch(window.location.href, {
+                method: 'POST',
+                body: JSON.stringify({ announcement }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    dialogFormAnn.reset();
+                    dialogAnn.style.display = "none";
+                    // Optionally update the announcements section
+                    // Example: document.getElementById("announcementTable").innerHTML = ...
+                } else {
+                    alert('Failed to add announcement.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add announcement.');
             });
         });
+
+        dialogFormNews.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            const formData = new FormData(dialogFormNews);
+            const news = formData.get("news");
+
+            fetch(window.location.href, {
+                method: 'POST',
+                body: JSON.stringify({ news }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    dialogFormNews.reset();
+                    dialogNews.style.display = "none";
+                    // Optionally update the news section
+                    // Example: document.getElementById("newsTable").innerHTML = ...
+                } else {
+                    alert('Failed to add news.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add news.');
+            });
+        });
+    });
     </script>
 </body>
 

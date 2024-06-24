@@ -15,6 +15,13 @@ class Announcement{
         $insert=mysqli_query($this->conn,$query);
         return $insert;
     }
+
+    public function addAnnouncement($announcement){
+        // INSERT INTO `announcement`(`id`, `announcement`) VALUES ('[value-1]','[value-2]')
+        $query = "INSERT INTO `".$this->table."` (`announcement`) VALUES ('$announcement') ";
+        $insert=mysqli_query($this->conn,$query);
+        return $insert;
+    }
 }
 
 ?>
