@@ -20,6 +20,12 @@ class Student{
         // $insert=mysqli_query($this->conn,$query);
         return $stmt->get_result();
     }
+
+    public function getSemStudent($sem){
+        $query = "SELECT * FROM `".$this->table."` WHERE sem =".$sem;
+        $insert=mysqli_query($this->conn,$query);
+        return $insert;
+    }
 }
 
 ?>
