@@ -17,10 +17,10 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i ><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="admin_dashboard.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="admin_admission.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active"><a href="admin_admission.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="admin_admission.php">Admission</a><span>Admission</span></li>
                 </i>
                 <i><a href="admin_fees.php"><img src="/src/img/icons/report.svg" alt=""></a>
@@ -68,50 +68,50 @@ placement</a><span>Training/
             <div>
             <h2>Semester-1</h2>
             </div>
-            <a href="admin_student.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=1" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-2</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=2" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-3</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=3" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
 
           <div class="module">
             <div>
             <h2>Semester-4</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=4" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-5</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=5" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-6</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=6" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-7</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=7" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Semester-8</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="admin_student.php?sem=8" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
         </section>
     </main>

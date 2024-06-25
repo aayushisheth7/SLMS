@@ -1,3 +1,17 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/student_data.php');
+$sem;
+if (isset($_GET['sem'])) {
+    $sem = $_GET['sem'];
+    echo "Selected Semester: " . $sem;
+}
+
+$student =  new Student($conn, $_SESSION['username']);
+$student_data = $student->getSemStudent($sem);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +31,10 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i ><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="admin_dashboard.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="admin_admission.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active"><a href="admin_admission.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="admin_admission.php">Admission</a><span>Admission</span></li>
                 </i>
                 <i><a href="admin_fees.php"><img src="/src/img/icons/report.svg" alt=""></a>
@@ -62,7 +76,10 @@ placement</a><span>Training/
     </div>
 
     <main>
-        <h2 style="color: #9C50CA;">Semester-1</h2>
+        <!-- <h2 style="color: #9C50CA;">Semester-1</h2> -->
+        <?php 
+         echo "<h2 style=\"color: #9C50CA;\">Semester- $sem</h2>";
+         ?>
         <section class="fee-list">
             <table class="fee-table">   
                 <thead>
@@ -73,17 +90,25 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                    $num = $student_data->num_rows;
+
+                    if ($num > 0) {
+                        while ($row = $student_data->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td> $id </td>";
+                            echo "<td> $fname  $lname </td>";
+                            echo "<td><a href=\"admin_studentdetail.php?username=$username\" class=\"button\">View Details</a></td>";
+                            echo "<tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                         <td>210430116103</td>
                         <td>Bhatt Nishiket</td>
                         <td><a href="admin_studentdetail.php" class="button">View Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116114</td>
-                        <td>AABB</td>
-                        <td><a href="#" class="button">View Details</a></td>
-                    </tr>
-    
+                    </tr> -->
                   </tbody>
                   </table>
         </section>
