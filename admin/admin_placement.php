@@ -1,3 +1,22 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/placement.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $placement = new Placement($conn);
+    $result = $placement->addPlacement($_POST['name'], $_POST['detail'], $_POST['view'], $_POST['apply']);
+    // header('Content-Type: application/json');
+    // if ($result) {
+    //     echo json_encode(['status' => 'success']);
+    // } else {
+    //     echo json_encode(['status' => 'error']);
+    // }
+}
+
+$data = new Placement($conn);
+$result = $data->getPlacement();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +36,7 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="admin_dashboard.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="admin_admission.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -29,7 +48,7 @@
                 <i><a href="admin_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
                     <li><a href="admin_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="admin_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i class="active"><a href="admin_placement.php"><img src="/src/img/icons/briefcase_active.svg" alt=""></a>
                     <li>
                         <pre><a href="admin_placement.php">Training/
 placement</a><span>Training/
@@ -62,36 +81,28 @@ placement</a><span>Training/
     </div>
 
     <section class="content">
-        <h1 style="color: #9C50CA; margin-left: 10px;">Placed Student Details</h1>
-        <div class="placement" style="margin-top: 20px;">
+        <h1 style="color: #9C50CA; margin-left: 10px;">Placements</h1>
+        <?php
+        $num = $result->num_rows;
+        if($num>0){
+            while($row = $result->fetch_assoc()){
+                extract($row);
+                echo "<div class=\"placement\" style=\"margin-top: 20px;\">";
+                echo " <h3>$name</h3>";
+                echo "<p> $detail</p>";
+                echo "<a href=\"$view\" class=\"button\">View</a>";
+                echo "<a href=\"$apply\" class=\"button\">Apply</a>";
+                echo "</div>";
+            }
+        }
+        ?>
+        <!-- <div class="placement" style="margin-top: 20px;">
         <h3>ABC</h3>
             <p> Company: Techsoft</p>
             <p> package: 5 LPA </p>
             <p> CGPA : 8.00</p>
             <p> Branch: Web Frontend</p>
-          </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                <p> Company: Techsoft</p>
-                <p> package: 5 LPA </p>
-                <p> CGPA : 8.00</p>
-                <p> Branch: Web Frontend</p>
-              </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                    <p> Company: Techsoft</p>
-                    <p> package: 5 LPA </p>
-                    <p> CGPA : 8.00</p>
-                    <p> Branch: Web Frontend</p>
-            </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                        <p> Company: Techsoft</p>
-                        <p> package: 5 LPA </p>
-                        <p> CGPA : 8.00</p>
-                        <p> Branch: Web Frontend</p>
-            </div>
-
+          </div> -->
         </section>
 </body>
 
