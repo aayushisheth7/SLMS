@@ -17,7 +17,7 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -26,7 +26,7 @@
                 <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
-                <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                <i class="active" ><a href="principal_report.php"><img src="/src/img/icons/report_selected.svg" alt=""></a>
                     <li><a href="principal_report.php">Report</a><span>Report</span></li>
                 </i>
                 <i><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
@@ -67,54 +67,27 @@ placement</a><span>Training/
     <section class="content">
         <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-6</h2>
             </div>
-            <a href="princi-student_report.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="princi-student_report.php?sem=6" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-1</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="princi-student_report.php?sem=1" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-2</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="princi-student_report.php?sem=2" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-3</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="princi-student_report.php?sem=3" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
         </section>
 </body>

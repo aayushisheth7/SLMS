@@ -1,3 +1,16 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/student_data.php');
+$sem;
+if (isset($_GET['sem'])) {
+    $sem = $_GET['sem'];
+    echo "Selected Semester: " . $sem;
+}
+
+$student =  new Student($conn, $_SESSION['username']);
+$student_data = $student->getSemStudent($sem);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +31,7 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i ><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -27,7 +40,7 @@
                 <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
-                <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                <i class="active" ><a href="principal_report.php"><img src="/src/img/icons/report_selected.svg" alt=""></a>
                     <li><a href="principal_report.php">Report</a><span>Report</span></li>
                 </i>
                 <i><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
@@ -65,7 +78,10 @@ placement</a><span>Training/
     </div>
     
     <main>
-        <h2 style="color: #9C50CA;">Semester-1</h2>
+        <!-- <h2 style="color: #9C50CA;">Semester-1</h2> -->
+        <?php 
+         echo "<h2 style=\"color: #9C50CA;\">Semester- $sem</h2>";
+         ?>
         <section class="fee-list">
             <table class="fee-table">   
                 <thead>
@@ -76,43 +92,25 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                    $num = $student_data->num_rows;
+
+                    if ($num > 0) {
+                        while ($row = $student_data->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td> $id </td>";
+                            echo "<td> $fname  $lname </td>";
+                            echo "<td><a href=\"princi-student(report)_detail.php?username=$username\" class=\"button\">View Details</a></td>";
+                            echo "<tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                         <td>210430116108</td>
                         <td>Kakadiya Dharmi</td>
                         <td><a href="princi-student(report)_detail.php" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116109</td>
-                        <td>AABB</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116110</td>
-                        <td>BBCD</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116111</td>
-                        <td>XYZ</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116130</td>
-                        <td>LMN</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116140</td>
-                        <td>ABCD</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116150</td>
-                        <td>PQR</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-    
-    
+                    </tr> -->
                   </tbody>
                   </table>
         </section>

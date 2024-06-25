@@ -67,55 +67,29 @@ placement</a><span>Training/
     <section class="content">
         <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-6 </h2>
             </div>
-            <a href="fac-student_report.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="fac-student_report.php?sem=6" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-1 </h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="fac-student_report.php?sem=1" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-2 </h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="fac-student_report.php?sem=2" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
+            <h2>B.E Sem-3 </h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="fac-student_report.php?sem=3" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
-
-          <div class="module">
-            <div>
-            <h2>I.T Sem-1 Class B</h2>
-            <p>from 210430116108 to 210430116150</p>
-            </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
-          </div>
+          
         </section>
 </body>
 

@@ -1,3 +1,16 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/student_data.php');
+$sem;
+if (isset($_GET['sem'])) {
+    $sem = $_GET['sem'];
+    echo "Selected Semester: " . $sem;
+}
+
+$student =  new Student($conn, $_SESSION['username']);
+$student_data = $student->getSemStudent($sem);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +78,10 @@ placement</a><span>Training/
     </div>
 
     <main>
-        <h2 style="color: #9C50CA;">Semester-1</h2>
+        <!-- <h2 style="color: #9C50CA;">Semester-1</h2> -->
+        <?php 
+         echo "<h2 style=\"color: #9C50CA;\">Semester- $sem</h2>";
+         ?>
         <section class="fee-list">
             <table class="fee-table">   
                 <thead>
@@ -76,44 +92,27 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                    $num = $student_data->num_rows;
+
+                    if ($num > 0) {
+                        while ($row = $student_data->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td> $id </td>";
+                            echo "<td> $fname  $lname </td>";
+                            echo "<td><a href=\"fac-student(report)_detail.php?username=$username\" class=\"button\">View Details</a></td>";
+                            echo "<tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                         <td>210430116108</td>
                         <td>Kakadiya Dharmi</td>
                         <td><a href="fac-student(report)_detail.php" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116109</td>
-                        <td>AABB</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116110</td>
-                        <td>BBCD</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116111</td>
-                        <td>XYZ</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116130</td>
-                        <td>LMN</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116140</td>
-                        <td>ABCD</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-                    <tr>
-                        <td>210430116150</td>
-                        <td>PQR</td>
-                        <td><a href="#" class="button">View Report</a></td>
-                    </tr>
-    
-    
-                  </tbody>
+                    </tr> -->
+
+                  </body>
                   </table>
         </section>
     </main>
