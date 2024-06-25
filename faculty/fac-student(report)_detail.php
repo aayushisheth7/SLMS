@@ -89,10 +89,10 @@
                 <i><a href="faculty_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="faculty_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i  class="active"><a href="faculty_student.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
+                <i  ><a href="faculty_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="faculty_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="faculty_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                <i class="active"><a href="faculty_report.php"><img src="/src/img/icons/report_selected.svg" alt=""></a>
                     <li><a href="faculty_report.php">Report</a><span>Report</span></li>
                 </i>
                 <i><a href="faculty_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
