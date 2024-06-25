@@ -10,8 +10,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         header('Location: ../../signup.html');
     }else{
         echo"<script> alert('Username is taken') </script>";
-        header('Location: ../../create_acc.html');
-        // header('Location: ../../signup.html');
+        // header('Location: ../../create_acc.html');
+        header('Location: ../../signup.html');
     }
 }
 else{
