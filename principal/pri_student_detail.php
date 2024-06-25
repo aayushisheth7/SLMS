@@ -1,3 +1,25 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/student_data.php');
+include('../src/php/university_res.php');
+
+$username;
+if (isset($_GET['username'])) {
+    $username = $_GET['username'];
+}
+
+$student =  new Student($conn, $username);
+$student_data = $student->getStudent($username);
+if($student_data->num_rows >0){
+$data = $student_data->fetch_assoc();
+extract($data);
+}
+
+$uni = new UniversityResults($conn);
+$uni_result = $uni->getResults($username);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +39,10 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
-                <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active" ><a href="principal_student.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
                 <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -65,7 +87,10 @@ placement</a><span>Training/
     </div>
 
     <main>
-        <h2 style="color: #9C50CA;">Bhatt Nishiket</h2>
+        <!-- <h2 style="color: #9C50CA;">Bhatt Nishiket</h2> -->
+        <?php
+        echo "<h2 style=\"color: #9C50CA;\">$fname  $lname</h2>";
+        ?>
         <section class="info">
             <h3 style="color: #9C50CA;">General Information</h3>
             <div class="img">
@@ -73,11 +98,17 @@ placement</a><span>Training/
                 <section style="display: flex; flex-flow: column; margin-left: 10px;" >
                     <div style="display: flex;">
                     <p class="lable">Name:</p>
-                    <p>Bhatt Nishiket</p>
+                    <?php
+                        echo "<p>$fname  $lname</p>";
+                        ?>
+                    <!-- <p>Bhatt Nishiket</p> -->
                 </div>
                     <div style="display: flex;">
                         <p class="lable">Enrollment No.:</p>
-                         <p>210430116103</p>
+                        <?php
+                        echo "<p>$id</p>";
+                        ?>
+                         <!-- <p>210430116103</p> -->
                     </div>
                 </section>
             </div>
@@ -85,17 +116,26 @@ placement</a><span>Training/
             <section style="display: flex; " >
                  <div style="display: flex;">
                 <p class="lable">Branch:</p>
-                <p>Information Technology</p>
+                <?php
+                        echo "<p>$course</p>";
+                        ?>
+                <!-- <p>Information Technology</p> -->
             </div>
             <div style="display: flex; margin-left: 30px;">
                 <p class="lable">Contact No.:</p>
-                <p>+91 1548976249</p>
+                <?php
+                        echo "<p>$pnumber</p>";
+                        ?>
+                <!-- <p>+91 1548976249</p> -->
             </div>
             </section>
             </div>
             <div>
                 <p class="lable">Address:</p>
-                <p>Bhavnagar, Gujarat , India. 364001</p>
+                <?php
+                        echo "<p>$address</p>";
+                        ?>
+                <!-- <p>Bhavnagar, Gujarat , India. 364001</p> -->
             </div>
             <div>
                 <section style="display: flex; " >
@@ -127,62 +167,29 @@ placement</a><span>Training/
             </tr>
             </thead>
             <tbody>
-                <tr>
+            <?php
+                    $num = $uni_result->num_rows;
+
+                    if ($num > 0) {
+                        while ($row = $uni_result->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td> $sem </td>";
+                            echo "<td>" . ($backlog === null ? '--' : $backlog) . "</td>";
+                            echo "<td>" . ($spi === null ? '--' : $spi) . "</td>";
+                            echo "<td>" . ($cpi === null ? '--' : $cpi) . "</td>";
+                            echo "<td>" . ($cgpa === null ? '--' : $cgpa) . "</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                <!-- <tr>
                     <td>1</td>
                     <td>0</td>
                     <td>7.9</td>
                     <td>7.1</td>
                     <td>7.15</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>7.9</td>
-                    <td>7.1</td>
-                    <td>7.15</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>0</td>
-                    <td>7.9</td>
-                    <td>7.1</td>
-                    <td>7.15</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>7.9</td>
-                    <td>7.1</td>
-                    <td>7.15</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>7.9</td>
-                    <td>7.1</td>
-                    <td>7.15</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                </tr>
+                </tr> -->
               </tbody>
               </table>
         </section>
