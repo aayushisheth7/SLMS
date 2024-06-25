@@ -1,3 +1,22 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/faculty_data.php');
+
+$id;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+
+$faculty =  new Faculty($conn, $_SESSION['username']);
+$faculty_data = $faculty->getIDFaculty($id);
+if($faculty_data->num_rows >0){
+$data = $faculty_data->fetch_assoc();
+extract($data);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +27,7 @@
     <link rel="stylesheet" href="/src/css/student_home.css">
     <link rel="stylesheet" href="/src/css/student_details.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>Students</title>
+    <title>Faculty</title>
 </head>
 
 <body>
@@ -17,13 +36,13 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i ><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active" ><a href="principal_faculty.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
                 <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
@@ -65,7 +84,10 @@ placement</a><span>Training/
     </div>
 
     <main>
-        <h2 style="color: #9C50CA;">Nikunj B. Nayak</h2>
+        <!-- <h2 style="color: #9C50CA;">Nikunj B. Nayak</h2> -->
+        <?php
+        echo "<h2 style=\"color: #9C50CA;\">$fname $mname $lname</h2>";
+        ?>
         <section class="info">
             <h3 style="color: #9C50CA;">General Information</h3>
             <div class="img">
@@ -73,11 +95,17 @@ placement</a><span>Training/
                 <section style="display: flex; flex-flow: column; margin-left: 10px;" >
                     <div style="display: flex;">
                     <p class="lable">Name:</p>
-                    <p>Nikunj B. Nayak</p>
+                    <?php
+        echo "<p>$fname $mname $lname</p>";
+        ?>
+                    <!-- <p>Nikunj B. Nayak</p> -->
                 </div>
                     <div style="display: flex;">
                         <p class="lable">Email:</p>
-                         <p>nbnayak123@gmail.com</p>
+                        <?php
+        echo "<p>$email</p>";
+        ?>
+                         <!-- <p>nbnayak123@gmail.com</p> -->
                     </div>
                 </section>
             </div>
@@ -85,31 +113,49 @@ placement</a><span>Training/
             <section>
                  <div style="display: flex;">
                 <p class="lable">Age:</p>
-                <p>30</p>
+                <?php
+        echo "<p>$age</p>";
+        ?>
+                <!-- <p>30</p> -->
             </div>
             <div style="display: flex;">
                 <p class="lable">Contact No.:</p>
-                <p>+91 1548976249</p>
+                <?php
+        echo "<p>$mobileno</p>";
+        ?>
+                <!-- <p>+91 1548976249</p> -->
             </div>
             </section>
             </div>
             <div>
                 <p class="lable">Address:</p>
-                <p>Bhavnagar, Gujarat , India. 364001</p>
+                <?php
+        echo "<p>$address</p>";
+        ?>
+                <!-- <p>Bhavnagar, Gujarat , India. 364001</p> -->
             </div>
             <div>
                 <section>
                     <div style="display: flex;">
                 <p class="lable">Present Post:</p>
-                <p>Assistant Professor</p>
+                <?php
+        echo "<p>$position</p>";
+        ?>
+                <!-- <p>Assistant Professor</p> -->
             </div>
             <div style="display: flex;">
-                <p class="lable">Place:</p>
-                <p>Shantilal Shah Engineering College, Bhavnagar</p>
+                <p class="lable">Qulification:</p>
+                <?php
+        echo "<p>$qualification</p>";
+        ?>
+                <!-- <p>Shantilal Shah Engineering College, Bhavnagar</p> -->
             </div>
             <div style="display: flex;">
                 <p class="lable">Specification:</p>
-                <p>Master in Data Science</p>
+                <?php
+        echo "<p>$expertise</p>";
+        ?>
+                <!-- <p>Master in Data Science</p> -->
             </div>
             </section>
             </div>

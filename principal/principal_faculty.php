@@ -17,13 +17,13 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active"><a href="principal_faculty.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
                 <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
@@ -71,38 +71,38 @@ placement</a><span>Training/
             <div>
             <h2>Information Technology</h2>
             </div>
-            <a href="pri_faculty.php" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Information Technology" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Civil Engineering</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Civil Engineering" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Electrical Engineering</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Electrical Engineering" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
 
           <div class="module">
             <div>
             <h2>Mechanical Engineering </h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Mechanical Engineering" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Computer Engineering</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Computer Engineering" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           <div class="module">
             <div>
             <h2>Environmental Engineering</h2>
             </div>
-            <a href="#" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
+            <a href="pri_faculty.php?branch=Environmental Engineering" class="button"><img src="/src/img/icons/expend_right.svg" alt=""></a>
           </div>
           
             

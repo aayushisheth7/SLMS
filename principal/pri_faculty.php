@@ -1,3 +1,16 @@
+<?php
+session_start();
+include('../src/php/dbconnect.php');
+include('../src/php/faculty_data.php');
+$branch;
+if (isset($_GET['branch'])) {
+    $branch = $_GET['branch'];
+}
+
+$faculty =  new Faculty($conn, $_SESSION['username']);
+$faculty_data = $faculty->getPositionStudent($branch);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +21,7 @@
     <link rel="stylesheet" href="/src/css/student_home.css">
     <link rel="stylesheet" href="/src/css/student_number.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>Students</title>
+    <title>Faculty</title>
 </head>
 
 <body>
@@ -17,13 +30,13 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="principal_student.php">Student</a><span>Student</span></li>
                 </i>
-                <i><a href="principal_faculty.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
+                <i class="active"><a href="principal_faculty.php"><img src="/src/img/icons/clieant._active.svg" alt=""></a>
                     <li><a href="principal_faculty.php">Faculty</a><span>faculty</span></li>
                 </i>
                 <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
@@ -76,17 +89,25 @@ placement</a><span>Training/
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                    $num = $faculty_data->num_rows;
+
+                    if ($num > 0) {
+                        while ($row = $faculty_data->fetch_assoc()) {
+                            extract($row);
+                            echo "<tr>";
+                            echo "<td> $id </td>";
+                            echo "<td> $fname $mname  $lname </td>";
+                            echo "<td><a href=\"pri_faculty_detail.php?id=$id\" class=\"button\">View Details</a></td>";
+                            echo "<tr>";
+                        }
+                    }
+                    ?>
+                    <!-- <tr>
                         <td>1.</td>
                         <td>Nikunj B. Nayak</td>
                         <td><a href="pri_faculty_detail.php" class="button">View Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>Paresh M. Chauhan</td>
-                        <td><a href="#" class="button">View Details</a></td>
-                    </tr>
-    
+                    </tr>    -->
                   </tbody>
                   </table>
         </section>
