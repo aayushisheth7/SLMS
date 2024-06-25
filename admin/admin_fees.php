@@ -17,13 +17,13 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i><a href="admin_dashboard.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="admin_dashboard.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="admin_admission.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
                     <li><a href="admin_admission.php">Admission</a><span>Admission</span></li>
                 </i>
-                <i><a href="admin_fees.php"><img src="/src/img/icons/report.svg" alt=""></a>
+                <i class="active" ><a href="admin_fees.php"><img src="/src/img/icons/report_selected.svg" alt=""></a>
                     <li><a href="admin_fees.php">Fees detail</a><span>Fees detail</span></li>
                 </i>
                 <i><a href="admin_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
