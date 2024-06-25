@@ -1,3 +1,11 @@
+<?php
+include('../src/php/dbconnect.php');
+include('../src/php/placement.php');
+
+$data = new Placement($conn);
+$result = $data->getPlacement();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +25,7 @@
         <img src="/src/img/icons/SLMS.svg">
         <nav>
             <ul>
-                <i class="active"><a href="principal_home.php"><img src="/src/img/icons/deshboard_icon.svg"></a>
+                <i> <a href="principal_home.php"><img src="/src/img/icons/deshboard_icon_inactive.svg"></a>
                     <li><a href="principal_home.php">Dashboard</a><span>Dashboard</span></li>
                 </i>
                 <i><a href="principal_student.php"><img src="/src/img/icons/clieant.svg" alt=""></a>
@@ -29,10 +37,10 @@
                 <i><a href="principal_report.php"><img src="/src/img/icons/report.svg" alt=""></a>
                     <li><a href="principal_report.php">Report</a><span>Report</span></li>
                 </i>
-                <i><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
+                <i ><a href="principal_noticeboard.php"><img src="/src/img/icons/note text.svg" alt=""></a>
                     <li><a href="principal_noticeboard.php">Noticeboard</a><span>Noticeboard</span></li>
                 </i>
-                <i><a href="principal_placement.php"><img src="/src/img/icons/briefcase.svg" alt=""></a>
+                <i class="active" ><a href="principal_placement.php"><img src="/src/img/icons/briefcase_active.svg" alt=""></a>
                     <li>
                         <pre><a href="principal_placement.php">Training/
 placement</a><span>Training/
@@ -65,74 +73,21 @@ placement</a><span>Training/
     </div>
 
     <section class="content">
-        <h1 style="color: #9C50CA; margin-left: 10px;">Placed Student Details</h1>
+        <h1 style="color: #9C50CA; margin-left: 10px;">Placements</h1>
         <div class="placement" style="margin-top: 20px;">
-        <h3>ABC</h3>
-            <p> Company: Techsoft</p>
-            <p> package: 5 LPA </p>
-            <p> CGPA : 8.00</p>
-            <p> Branch: Web Frontend</p>
-          </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                <p> Company: Techsoft</p>
-                <p> package: 5 LPA </p>
-                <p> CGPA : 8.00</p>
-                <p> Branch: Web Frontend</p>
-              </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                    <p> Company: Techsoft</p>
-                    <p> package: 5 LPA </p>
-                    <p> CGPA : 8.00</p>
-                    <p> Branch: Web Frontend</p>
-            </div>
-        <div class="placement" style="margin-top: 20px;">
-            <h3>ABC</h3>
-                        <p> Company: Techsoft</p>
-                        <p> package: 5 LPA </p>
-                        <p> CGPA : 8.00</p>
-                        <p> Branch: Web Frontend</p>
-            </div>
-
-        <h1 style="color: #9C50CA; margin-left: 10px;">They are on campus !!</h1>
-        
-        <div class="placement" style="margin-top: 20px;">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
-          <div class="placement">
-            <h3>TechSoft</h3>
-            <p>We are product base company and we are hiring for Php and frontend developer </p>
-            <p class="applied">Applied by: 30 student</p>
-            <a href="#" class="button">View</a>
-          </div>
+        <?php
+        $num = $result->num_rows;
+        if($num>0){
+            while($row = $result->fetch_assoc()){
+                extract($row);
+                echo "<div class=\"placement\" style=\"margin-top: 20px;\">";
+                echo " <h3>$name</h3>";
+                echo "<p> $detail</p>";
+                echo "<a href=\"$view\" class=\"button\">View</a>";
+                echo "</div>";
+            }
+        }
+        ?>
           
         </section>
 </body>
