@@ -8,7 +8,7 @@ const Login = () => {
 
         // Set the form attributes
         form.method = 'POST';
-        form.action = '/src/php/create_acc.php';
+        form.action = './src/php/create_acc.php';
       
         // Create form data and append the necessary fields
         const formData = new FormData();

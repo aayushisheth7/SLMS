@@ -167,7 +167,7 @@ placement</a><span>Training/
 
         <section class="news-list">
             <h2 style="color: #9C50CA; margin-left: 10px;">News</h2>
-            <button id="addNewNews" class="button">Add New</button>
+            <button id="addNewNews" class="button" style="margin-left: 10px;">Add New</button>
             <table class="news-table">
                 <tbody>
                     <?php
